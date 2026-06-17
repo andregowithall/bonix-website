@@ -440,6 +440,83 @@ body{overflow-x:hidden;}
   .hw-grid{grid-template-columns:1fr;}
   .cert-docs{grid-template-columns:1fr;}
 }
+.fac-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:center;}
+.fac-img{border-radius:16px;overflow:hidden;}
+.fac-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.fac-stats{display:flex;flex-direction:column;gap:1.8rem;}
+.fac-stat-item{padding:1.4rem 1.6rem;background:rgba(0,0,0,.02);border:1px solid var(--border);border-radius:12px;}
+.fac-stat-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--accent);line-height:1;}
+.fac-stat-lbl{font-size:13px;color:var(--muted);margin-top:.4rem;}
+.cap-imgs{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;}
+.cap-img{border-radius:16px;overflow:hidden;aspect-ratio:16/10;}
+.cap-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.cap-img:hover img{transform:scale(1.05);}
+.cap-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;padding-top:1.8rem;border-top:1px solid var(--border);}
+.cap-stat-item{text-align:center;}
+.cap-stat-num{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--accent);line-height:1;}
+.cap-stat-lbl{font-size:12px;color:var(--muted);margin-top:.4rem;line-height:1.4;}
+.equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.equip-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;transition:all .3s;}
+.equip-card:hover{border-color:var(--gold);background:rgba(255,255,255,.06);}
+.equip-img{aspect-ratio:4/3;overflow:hidden;}
+.equip-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.equip-card:hover .equip-img img{transform:scale(1.05);}
+.equip-title{padding:1.1rem 1.2rem;font-size:13px;font-weight:600;color:#fff;line-height:1.5;}
+@media(max-width:1024px){.fac-layout{grid-template-columns:1fr;}.cap-imgs{grid-template-columns:1fr;}.cap-stats{grid-template-columns:repeat(3,1fr);}.equip-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.cap-stats{grid-template-columns:1fr 1fr;}.equip-grid{grid-template-columns:1fr;}.fac-stats{gap:1.2rem;}}
+.fac-cap-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+.fac-cap-img{border-radius:12px;overflow:hidden;aspect-ratio:16/10;}
+.fac-cap-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.fac-cap-data{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem;}
+.fac-cap-item{padding:1rem;background:rgba(0,0,0,.03);border:1px solid var(--border);border-radius:10px;text-align:center;}
+.fac-cap-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--accent);line-height:1.1;}
+.fac-cap-lbl{font-size:11px;color:var(--muted);margin-top:.4rem;line-height:1.4;}
+.fac-cap-prod-imgs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.fac-cap-prod-img{border-radius:12px;overflow:hidden;aspect-ratio:4/3;}
+.fac-cap-prod-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.fac-cap-prod-img:hover img{transform:scale(1.05);}
+.fac-cap-prod-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;margin-top:1.2rem;}
+.fac-cap-prod-item{text-align:center;padding:.8rem .5rem;background:rgba(0,0,0,.03);border:1px solid var(--border);border-radius:10px;}
+.fac-cap-prod-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--accent);line-height:1;}
+.fac-cap-prod-lbl{font-size:11px;color:var(--muted);margin-top:.3rem;line-height:1.4;}
+.equip-gmpc{margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);}
+.equip-gmpc-label{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:.6rem;}
+.equip-gmpc-desc{font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;max-width:720px;margin-bottom:1.5rem;}
+.equip-gmpc-imgs{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.equip-gmpc-img{border-radius:10px;overflow:hidden;aspect-ratio:4/3;}
+.equip-gmpc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.equip-gmpc-img:hover img{transform:scale(1.05);}
+@media(max-width:1024px){.fac-cap-layout{grid-template-columns:1fr;}.fac-cap-prod-stats{grid-template-columns:repeat(3,1fr);}.equip-gmpc-imgs{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.fac-cap-data{grid-template-columns:1fr 1fr;}.fac-cap-prod-stats{grid-template-columns:1fr 1fr;}.equip-gmpc-imgs{grid-template-columns:1fr 1fr;}}
+
+
+/* ── Facility & Capacity v3 ── */
+.fac3-stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2rem;}
+.fac3-stat{text-align:center;padding:1.2rem .8rem;background:var(--snow);border:1px solid var(--border);border-radius:12px;}
+.fac3-stat-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--accent);line-height:1;}
+.fac3-stat-lbl{font-size:11px;color:var(--muted);margin-top:.4rem;line-height:1.3;}
+.fac3-imgs{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:1fr 1fr;gap:1rem;}
+.fac3-img-main{grid-row:1/3;border-radius:14px;overflow:hidden;}
+.fac3-img-main img{width:100%;height:100%;object-fit:cover;display:block;}
+.fac3-img-side{border-radius:14px;overflow:hidden;aspect-ratio:16/9;}
+.fac3-img-side img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.fac3-img-side:hover img{transform:scale(1.05);}
+.fac3-foot{display:flex;justify-content:center;gap:1rem;margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:12px;color:var(--muted);flex-wrap:wrap;}
+.fac3-sep{color:var(--border);}
+/* ── Equipment & Quality v3 ── */
+.eq3-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+.eq3-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;transition:all .3s;}
+.eq3-item:hover{border-color:var(--gold);background:rgba(255,255,255,.06);}
+.eq3-img{aspect-ratio:4/3;overflow:hidden;}
+.eq3-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.eq3-item:hover .eq3-img img{transform:scale(1.05);}
+.eq3-name{padding:.8rem .9rem;font-size:12px;font-weight:500;color:rgba(255,255,255,.8);line-height:1.4;}
+.eq3-feat{display:flex;justify-content:space-between;align-items:center;gap:2rem;margin-top:2rem;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;}
+.eq3-feat-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;max-width:560px;}
+.eq3-badges{display:flex;gap:.6rem;flex-shrink:0;}
+.eq3-badge{padding:.45rem 1rem;border:1px solid var(--gold);border-radius:20px;font-size:11px;font-weight:600;color:var(--gold);white-space:nowrap;}
+@media(max-width:1024px){.fac3-stats-row{grid-template-columns:repeat(3,1fr);}.fac3-imgs{grid-template-columns:1fr;grid-template-rows:auto;}.fac3-img-main{grid-row:auto;aspect-ratio:16/9;}.eq3-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){.fac3-stats-row{grid-template-columns:1fr 1fr;}.eq3-grid{grid-template-columns:1fr 1fr;}.eq3-feat{flex-direction:column;align-items:flex-start;}}
 </style>
 </head>
 <body>
@@ -447,12 +524,10 @@ body{overflow-x:hidden;}
   <div class="nav-inner">
     <a class="logo" href="#"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C16 3 6 11.5 6 19.5C6 25 10.5 29 16 29C21.5 29 26 25 26 19.5C26 11.5 16 3 16 3Z" fill="var(--accent)"/><path d="M16 9.5C16 9.5 11.5 14 11.5 18.8C11.5 22 13.5 24.2 16 24.2" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/></svg><span class="logo-txt">BO<b>NIX</b></span></a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#services" id="nl-svc">Services</a></li>
-      <li><a href="#why" id="nl-why">Why Us</a></li>
-      <li><a href="#products" id="nl-prod">Products</a></li>
-      <li><a href="#quality" id="nl-qual">Quality</a></li>
+      <li><a href="#facility" id="nl-fac">Facility</a></li>
       <li><a href="#certifications" id="nl-cert">Certifications</a></li>
-      <li><a href="#clients" id="nl-cl">Clients</a></li>
+      <li><a href="#services" id="nl-svc">Services</a></li>
+      <li><a href="#products" id="nl-prod">Products</a></li>
       <li><a href="#process" id="nl-proc">Process</a></li>
       <li><a href="#contact" id="nl-con">Contact</a></li>
       <li class="nav-cta-mobile"><a class="nav-cta" href="https://wa.me/8613920351502" target="_blank" rel="noopener noreferrer" data-en="Get a Quote" data-zh="立即询价">Get a Quote</a></li>
@@ -508,42 +583,114 @@ body{overflow-x:hidden;}
   </div>
 </div>
 
-<section class="sec" id="services">
+<!-- 合并后的 Our Facility & Capacity -->
+<section class="sec" id="facility">
   <div class="sec-inner">
     <div class="sh fade-in">
-      <div class="eyebrow reveal" id="svc-eye">How We Work With You</div>
-      <h2 class="reveal reveal-d1" id="svc-h">Flexible Manufacturing Solutions</h2>
-      <p class="sec-sub reveal reveal-d2" id="svc-sub">Whether you have a brand, a sample, or just an idea — we have a tailored path to production for you.</p>
+      <div class="eyebrow reveal" id="fac-eye">Scale &amp; Capability</div>
+      <h2 class="reveal reveal-d1" id="fac-h">Our Facility &amp; Capacity</h2>
+      <p class="sec-sub reveal reveal-d2" id="fac-sub">A large-scale, modern manufacturing base running 20 intelligent production lines — built to deliver at any volume.</p>
     </div>
-    <div class="svc-grid reveal">
-      <div class="svc-card reveal" onclick="openModal('oem')">
-        <div class="svc-body">
-          <div class="svc-num">01</div>
-          <div class="svc-title" id="svc1t">OEM — Contract Manufacturing</div>
-          <div class="svc-desc" id="svc1d">You provide the formula or a reference sample; we manufacture to your specification with full packaging service.</div>
-          <div class="svc-link" id="svc1l">View process →</div>
-        </div>
+    <div class="fac3-stats-row fade-in">
+      <div class="fac3-stat"><div class="fac3-stat-num">400+</div><div class="fac3-stat-lbl" id="fac-s1">Employees</div></div>
+      <div class="fac3-stat"><div class="fac3-stat-num">32+</div><div class="fac3-stat-lbl" id="fac-s2">Equipment Units</div></div>
+      <div class="fac3-stat"><div class="fac3-stat-num">Class 100K</div><div class="fac3-stat-lbl" id="fac-s3">Cleanroom</div></div>
+      <div class="fac3-stat"><div class="fac3-stat-num">20</div><div class="fac3-stat-lbl" id="cap-s1">Production Lines</div></div>
+      <div class="fac3-stat"><div class="fac3-stat-num">500K</div><div class="fac3-stat-lbl" id="cap-s5">Daily Output*</div></div>
+    </div>
+    <div class="fac3-imgs fade-in">
+      <div class="fac3-img-main"><img src="facility-main.jpeg" alt="Bonix facility" loading="lazy"></div>
+      <div class="fac3-img-side"><img src="capacity-1.jpeg" alt="automated production line" loading="lazy"></div>
+      <div class="fac3-img-side"><img src="capacity-2.jpeg" alt="cleanroom filling" loading="lazy"></div>
+    </div>
+    <div class="fac3-foot fade-in">
+      <span id="fac3f1">17 lotion &amp; cream lines · 3 mask lines</span>
+      <span class="fac3-sep">|</span>
+      <span id="fac3f2">150,000 bottles/day · 500,000 mask sheets/day</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-dark" id="equipment">
+  <div class="sec-inner">
+    <div class="sh fade-in">
+      <div class="eyebrow reveal" id="equip-eye">Precision Technology &amp; Standards</div>
+      <h2 class="reveal reveal-d1" id="equip-h">Our Equipment &amp; Quality</h2>
+      <p class="sec-sub reveal reveal-d2" id="equip-sub">Industry-leading machinery within a GMPC-standard environment — precision and consistency at every production stage.</p>
+    </div>
+    <div class="eq3-grid fade-in">
+      <div class="eq3-item">
+        <div class="eq3-img"><img src="equip-emulsifying.jpeg" alt="vacuum emulsifying system" loading="lazy"></div>
+        <div class="eq3-name" id="eq1t">Vacuum Emulsifying System</div>
       </div>
-      <div class="svc-card reveal" onclick="openModal('odm')">
-        <div class="svc-body">
-          <div class="svc-num">02</div>
-          <div class="svc-title" id="svc2t">ODM — Design & Development</div>
-          <div class="svc-desc" id="svc2d">Choose from our formula library or co-develop a new product, then launch it under your own brand.</div>
-          <div class="svc-link" id="svc2l">View process →</div>
-        </div>
+      <div class="eq3-item">
+        <div class="eq3-img"><img src="equip-water-treatment.jpeg" alt="automated water treatment" loading="lazy"></div>
+        <div class="eq3-name" id="eq2t">Automated Water Treatment</div>
       </div>
-      <div class="svc-card reveal" onclick="openModal('semi')">
-        <div class="svc-body">
-          <div class="svc-num">03</div>
-          <div class="svc-title" id="svc3t">Semi-Finished Supply</div>
-          <div class="svc-desc" id="svc3d">We supply proven bulk formulations for you to fill or further process at your own facility.</div>
-          <div class="svc-link" id="svc3l">View process →</div>
-        </div>
+      <div class="eq3-item">
+        <div class="eq3-img"><img src="equip-ro-system.jpeg" alt="RO pure water system" loading="lazy"></div>
+        <div class="eq3-name" id="eq3t">RO Pure Water System</div>
+      </div>
+      <div class="eq3-item">
+        <div class="eq3-img"><img src="equip-filling-line.jpeg" alt="automated filling line" loading="lazy"></div>
+        <div class="eq3-name" id="eq4t">High-Speed Filling Line</div>
+      </div>
+      <div class="eq3-item">
+        <div class="eq3-img"><img src="stage2-img1.jpeg" alt="production workshop" loading="lazy"></div>
+        <div class="eq3-name" id="eq5t">GMPC Production Workshop</div>
+      </div>
+      <div class="eq3-item">
+        <div class="eq3-img"><img src="stage2-img2-emulsifying.jpeg" alt="emulsifying workshop" loading="lazy"></div>
+        <div class="eq3-name" id="eq6t">Emulsifying Workshop</div>
+      </div>
+      <div class="eq3-item">
+        <div class="eq3-img"><img src="stage2-img3-filling-line.jpeg" alt="filling line workshop" loading="lazy"></div>
+        <div class="eq3-name" id="eq7t">Filling Line</div>
+      </div>
+      <div class="eq3-item">
+        <div class="eq3-img"><img src="stage2-img4-filling-machine.jpeg" alt="packaging workshop" loading="lazy"></div>
+        <div class="eq3-name" id="eq8t">Packaging Workshop</div>
+      </div>
+    </div>
+    <div class="eq3-feat fade-in">
+      <div class="eq3-feat-desc" id="equip-gmpc-desc">All equipment operates within a GMPC-standard environment with in-process quality checks at every stage.</div>
+      <div class="eq3-badges">
+        <div class="eq3-badge">GMPC</div>
+        <div class="eq3-badge">ISO 22716</div>
+        <div class="eq3-badge">FDA-aligned</div>
       </div>
     </div>
   </div>
 </section>
 
+
+
+
+
+
+
+<section class="sec sec-alt" id="certifications">
+  <div class="sec-inner">
+    <div class="sh center reveal">
+      <div class="eyebrow reveal" id="cert-eye">Quality Assurance</div>
+      <h2 class="reveal reveal-d1" id="cert-h">Internationally Certified.<br>Independently Verified.</h2>
+      <p class="sec-sub reveal reveal-d2" id="cert-sub">Our manufacturing operates under internationally recognised quality and safety certifications — independently audited and renewed.</p>
+    </div>
+    <div class="cert-badges reveal reveal-d2">
+      <img src="cert-badges.jpeg" alt="certifications" loading="lazy">
+    </div>
+    <div class="cert-docs reveal reveal-d2">
+      <div class="cert-doc">
+        <img src="cert-doc-gmpc.jpeg" alt="GMPC certificate" loading="lazy">
+        <div class="cert-doc-cap" id="cdoc1">GMPC — Good Manufacturing Practice of Cosmetics</div>
+      </div>
+      <div class="cert-doc">
+        <img src="cert-doc-iso.jpeg" alt="ISO 22716 certificate" loading="lazy">
+        <div class="cert-doc-cap" id="cdoc2">ISO 22716:2007 — Cosmetics GMP</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="sec" id="why">
   <div class="sec-inner">
@@ -685,7 +832,43 @@ body{overflow-x:hidden;}
   </div>
 </section>
 
-<section class="sec sec-alt" id="products">
+<section class="sec sec-alt" id="services">
+  <div class="sec-inner">
+    <div class="sh fade-in">
+      <div class="eyebrow reveal" id="svc-eye">How We Work With You</div>
+      <h2 class="reveal reveal-d1" id="svc-h">Flexible Manufacturing Solutions</h2>
+      <p class="sec-sub reveal reveal-d2" id="svc-sub">Whether you have a brand, a sample, or just an idea — we have a tailored path to production for you.</p>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc-card reveal" onclick="openModal('oem')">
+        <div class="svc-body">
+          <div class="svc-num">01</div>
+          <div class="svc-title" id="svc1t">OEM — Contract Manufacturing</div>
+          <div class="svc-desc" id="svc1d">You provide the formula or a reference sample; we manufacture to your specification with full packaging service.</div>
+          <div class="svc-link" id="svc1l">View process →</div>
+        </div>
+      </div>
+      <div class="svc-card reveal" onclick="openModal('odm')">
+        <div class="svc-body">
+          <div class="svc-num">02</div>
+          <div class="svc-title" id="svc2t">ODM — Design & Development</div>
+          <div class="svc-desc" id="svc2d">Choose from our formula library or co-develop a new product, then launch it under your own brand.</div>
+          <div class="svc-link" id="svc2l">View process →</div>
+        </div>
+      </div>
+      <div class="svc-card reveal" onclick="openModal('semi')">
+        <div class="svc-body">
+          <div class="svc-num">03</div>
+          <div class="svc-title" id="svc3t">Semi-Finished Supply</div>
+          <div class="svc-desc" id="svc3d">We supply proven bulk formulations for you to fill or further process at your own facility.</div>
+          <div class="svc-link" id="svc3l">View process →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="products">
   <div class="sec-inner">
     <div class="sh fade-in">
       <div class="eyebrow reveal" id="prod-eye">Product Range</div>
@@ -702,72 +885,6 @@ body{overflow-x:hidden;}
   </div>
 </section>
 
-<section class="sec sec-dark" id="quality">
-  <div class="sec-inner">
-    <div class="sh fade-in">
-      <div class="eyebrow reveal" id="qual-eye">Manufacturing Standards</div>
-      <h2 class="reveal reveal-d1" id="qual-h">Built on a GMPC Standard Facility</h2>
-      <p class="sec-sub reveal reveal-d2" id="qual-sub">Our partner factory operates under the ISO 22716:2007 quality system, with a newly built GMPC-standard workshop — covering R&amp;D, production and packaging under one roof.</p>
-    </div>
-    <div class="stage-grid fade-in">
-      <div class="stage-card">
-        <div class="stage-imgs"><img src="stage1-main.jpeg" alt="R&D" loading="lazy"></div>
-        <div class="stage-body">
-          <div class="stage-num">01</div>
-          <div class="stage-title" id="st1t">Research &amp; Development</div>
-          <div class="stage-desc" id="st1d">Our R&amp;D laboratory develops and tests every formula — from concept to stability-proven product — under strict quality protocols.</div>
-        </div>
-      </div>
-      <div class="stage-card">
-        <div class="stage-imgs stage-imgs-multi"><img src="stage2-img1.jpeg" alt="emulsifying" loading="lazy"><img src="stage2-img2-emulsifying.jpeg" alt="filling line" loading="lazy"><img src="stage2-img3-filling-line.jpeg" alt="filling machine" loading="lazy"><img src="stage2-img4-filling-machine.jpeg" alt="packaging" loading="lazy"></div>
-        <div class="stage-body">
-          <div class="stage-num">02</div>
-          <div class="stage-title" id="st2t">Production</div>
-          <div class="stage-desc" id="st2d">Advanced emulsifying and automated production lines manufacture bulk product in a controlled, GMPC-standard environment with in-process quality checks.</div>
-        </div>
-      </div>
-      <div class="stage-card">
-        <div class="stage-imgs"><img src="stage3-main.jpeg" alt="packaging & QC" loading="lazy"></div>
-        <div class="stage-body">
-          <div class="stage-num">03</div>
-          <div class="stage-title" id="st3t">Packaging &amp; Inspection</div>
-          <div class="stage-desc" id="st3d">Filling, labelling, final quality inspection and careful packing — every order is checked before it leaves the facility for export.</div>
-        </div>
-      </div>
-    </div>
-    <div class="qual-feat fade-in">
-      <div class="qual-feat-item"><div class="qual-feat-num">ISO 22716</div><div class="qual-feat-lbl" id="qf1">Quality System</div></div>
-      <div class="qual-feat-item"><div class="qual-feat-num">GMPC</div><div class="qual-feat-lbl" id="qf2">Standard Workshop</div></div>
-      <div class="qual-feat-item"><div class="qual-feat-num">FDA</div><div class="qual-feat-lbl" id="qf3">Aligned Guidelines</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec sec-alt" id="certifications">
-  <div class="sec-inner">
-    <div class="sh center reveal">
-      <div class="eyebrow reveal" id="cert-eye">Quality Assurance</div>
-      <h2 class="reveal reveal-d1" id="cert-h">Internationally Certified.<br>Independently Verified.</h2>
-      <p class="sec-sub reveal reveal-d2" id="cert-sub">Our manufacturing operates under internationally recognised quality and safety certifications — independently audited and renewed.</p>
-    </div>
-    <div class="cert-badges reveal reveal-d2">
-      <img src="cert-badges.jpeg" alt="certifications" loading="lazy">
-    </div>
-    <div class="cert-docs reveal reveal-d2">
-      <div class="cert-doc">
-        <img src="cert-doc-gmpc.jpeg" alt="GMPC certificate" loading="lazy">
-        <div class="cert-doc-cap" id="cdoc1">GMPC — Good Manufacturing Practice of Cosmetics</div>
-      </div>
-      <div class="cert-doc">
-        <img src="cert-doc-iso.jpeg" alt="ISO 22716 certificate" loading="lazy">
-        <div class="cert-doc-cap" id="cdoc2">ISO 22716:2007 — Cosmetics GMP</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
 <section class="sec" id="ingredients">
     <div class="sec-inner">
         <div class="sh fade-in">
@@ -781,6 +898,7 @@ body{overflow-x:hidden;}
         <p class="sec-sub" style="margin-top:1.5rem;font-size:0.85rem;color:#888;" data-en="Including partners from France (Sederma), Japan (Mitsubishi), Korea (Daemyung), USA (Lubrizol), Germany (Schulke), Switzerland (ABAC) and beyond." data-zh="合作单位包括法国仙婷、日本三菱、韩国多美、美国莱宝、德国舒美、瑞士ABAC等知名原料供应商。">Including partners from France (Sederma), Japan (Mitsubishi), Korea (Daemyung), USA (Lubrizol), Germany (Schulke), Switzerland (ABAC) and beyond.</p>
     </div>
 </section>
+
 <section class="sec" id="clients">
   <div class="sec-inner">
     <div class="sh center reveal">
@@ -931,7 +1049,7 @@ body{overflow-x:hidden;}
   <div class="ftop">
     <div class="fbrand"><a class="logo" href="#"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C16 3 6 11.5 6 19.5C6 25 10.5 29 16 29C21.5 29 26 25 26 19.5C26 11.5 16 3 16 3Z" fill="var(--accent)"/><path d="M16 9.5C16 9.5 11.5 14 11.5 18.8C11.5 22 13.5 24.2 16 24.2" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/></svg><span class="logo-txt">BO<b>NIX</b></span></a><p id="fp">Professional personal care ODM & OEM manufacturing in China. GMPC & ISO 22716 certified.</p></div>
     <div class="fcol"><h4 id="fc1h">Services</h4><ul><li><a href="#services" id="fc1a">OEM Manufacturing</a></li><li><a href="#services" id="fc1b">ODM Development</a></li><li><a href="#services" id="fc1c">Semi-Finished Supply</a></li><li><a href="#products" id="fc1d">Product Range</a></li></ul></div>
-    <div class="fcol"><h4 id="fc2h">Company</h4><ul><li><a href="#quality" id="fc2a">Manufacturing Standards</a></li><li><a href="#certifications" id="fc2b">Certifications</a></li><li><a href="#process" id="fc2c">Our Process</a></li></ul></div>
+    <div class="fcol"><h4 id="fc2h">Company</h4><ul><li><a href="#equipment" id="fc2a">Manufacturing Standards</a></li><li><a href="#certifications" id="fc2b">Certifications</a></li><li><a href="#process" id="fc2c">Our Process</a></li></ul></div>
     <div class="fcol"><h4 id="fc3h">Contact</h4><ul><li><a href="https://wa.me/8613920351502" target="_blank" rel="noopener noreferrer">WhatsApp</a></li><li><a href="mailto:info@bonixmfg.com">Email Us</a></li><li><a href="tel:+8613920351502">+86 139 2035 1502</a></li><li><a href="#" id="fc3l">Guangzhou &middot; Chengdu</a></li></ul></div>
   </div>
   <div class="fbot"><p id="fcopy">&copy; 2026 BONIX. All rights reserved.</p><div style="display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;"><a href="privacy-policy.html" class="fpp">Privacy Policy</a><div class="fcs"><span class="fc">GMPC</span><span class="fc">ISO 22716</span><span class="fc">DEKRA</span></div></div></div>
@@ -1006,8 +1124,8 @@ private:{i:'💎',t:'私人定制',b:'满足个人或品牌的特殊要求——
 sample:{i:'🔬',t:'来样定制',b:'已有心仪的产品？只需提供样版给我们。我们的研发团队逆向研究产品和配方，交付您想要的品牌产品。',p:['提供目标产品的实物样版','实验室分析并开发匹配配方','根据需求调整质地、气味和效果','以低成本推出成熟概念产品','全套生产和包装服务','适合复刻或改良现有产品']}
 }};
 const TXT={
-en:{'nl-svc':'Services','nl-prod':'Products','nl-qual':'Quality','nl-cert':'Certifications','nl-proc':'Process','nl-con':'Contact','nl-cta':'Get a Quote','h-eye':'GMPC · ISO 22716 · FDA-aligned Manufacturing','h-sub':"We connect international personal care brands with a certified ODM manufacturing partner in Guangzhou. Skincare, body care, hair care and more — from formula to finished product.",'h-btn1':'WhatsApp Us','h-btn2':'Our Services','hb1':'✓ GMPC Certified','hb2':'✓ ISO 22716:2007','hb3':'✓ FDA-aligned','hb4':'✓ 16 Product Categories','ts1':'Product Categories','ts2':'Service Models','ts3':'From Brief to Delivery','ts4':'Guangzhou · Chengdu','ts4b':'China Offices','ts5':'24h','ts5b':'Response Guarantee','nl-why':'Why Us','why-eye':'Our Departments','why-h':'A Full-Capability<br>Manufacturing Team','why-sub':'Six dedicated departments work together to take your product from concept to global delivery — under one roof.','d1t':'Business Dept','d1d':'Your dedicated overseas point of contact — managing communication, orders and the entire project timeline.','d2t':'R&D Dept','d2d':'Formula development, reverse engineering and sample iteration — backed by a stability-tested formula library.','d3t':'Production Dept','d3d':'GMPC-standard workshops with automated lines — capacity for mask, cream, emulsion, gel and liquid products.','d4t':'Regulatory Dept','d4d':'Ensuring ingredient, formula and label compliance — handling product filing so you clear every market\'s border.','d5t':'Marketing Dept','d5d':'Creative planning with an international perspective — concept, positioning, packaging design and product strategy.','d6t':'Quality Control Dept','d6d':'Inspection at every stage — raw materials, in-process and finished goods — so every batch meets specification.','svc-eye':'How We Work With You','svc-h':'Flexible Manufacturing Solutions','svc-sub':'OEM, ODM or semi-finished supply — we adapt to how you want to work, from your formula to a market-ready product.','svc1t':'OEM — Contract Manufacturing','svc1d':'You provide the formula or a reference sample; we manufacture to your specification with full packaging service.','svc1l':'View process →','svc2t':'ODM — Design & Development','svc2d':'Choose from our formula library or co-develop a new product, then launch it under your own brand.','svc2l':'View process →','svc3t':'Semi-Finished Supply','svc3d':'We supply proven bulk formulations for you to fill or further process at your own facility.','svc3l':'View process →','prod-eye':'Product Range','prod-h':'16 Customisable Categories','prod-sub':'From cleansers to colour cosmetics — full-spectrum ODM across skincare, body, hair and makeup. Your brand, your packaging, your formula.','pvcap':'Neutral samples shown — fully customisable to your brand','qual-eye':'Manufacturing Standards','qual-h':'Built on a GMPC Standard Facility','qual-p1':'Our partner factory operates under the ISO 22716:2007 quality management system, with a newly built GMPC-standard workshop equipped with a full range of advanced production equipment.','qual-p2':'From R&D and emulsification to filling, labelling and quality control, every stage follows international cosmetic GMP standards — ensuring your products meet the regulatory requirements of the EU, US and Asian markets.','qual-sub':'Our partner factory operates under the ISO 22716:2007 quality system, with a newly built GMPC-standard workshop — covering R&D, production and packaging under one roof.','st1t':'Research & Development','st1d':'Our R&D laboratory develops and tests every formula — from concept to stability-proven product — under strict quality protocols.','st2t':'Production','st2d':'Advanced emulsifying and automated production lines manufacture bulk product in a controlled, GMPC-standard environment with in-process quality checks.','st3t':'Packaging & Inspection','st3d':'Filling, labelling, final quality inspection and careful packing — every order is checked before it leaves the facility for export.','qf1':'Quality System','qf2':'Standard Workshop','qf3':'Aligned Guidelines','eq1':'Emulsifying Workshop','eq2':'Labelling Machine','eq3':'Automated Production','eq4':'Air Shower Room','eq5':'Production Workshop','cert-eye':'Quality Assurance','cdoc1':'GMPC — Good Manufacturing Practice of Cosmetics','cdoc2':'ISO 22716:2007 — Cosmetics GMP','cert-h':'Internationally Certified.<br>Independently Verified.','cert-sub':"Our partner facility in Guangzhou holds dual DEKRA certification — one of the world's most respected testing bodies, operating in 60+ countries.",'c1body':'Good Manufacturing Practice of Cosmetics — aligned with U.S. FDA guidelines. Covers skincare, hair care, gel, cream and emulsion including eye care and baby products.','c1iss':'Issuer: ','c1val':'Valid until 16 December 2026','c2body':'International standard for cosmetics Good Manufacturing Practices — the global industry benchmark. Audited annually by DEKRA.','c2iss':'Issuer: ','c2val':'Valid until 16 December 2026','proc-eye':'Our Model','proc-eye':'Our Model','proc-h':'How We Work','pr1':'Discuss Intent','pr2':'Sign Contract','pr3':'Confirm Product','pr4':'Confirm Packaging','pr5':'Apply for Filing','pr6':'Purchase Materials','pr7':'Begin Production','pr8':'Complete Delivery','proc-desc':'A clear, proven path from first conversation to final delivery — eight steps, fully managed, with no surprises along the way.','proc-btn':'Start Your Project ↗','pr1s':'Share your needs & goals','pr2s':'Terms & agreement confirmed','pr3s':'Formula & sample approval','pr4s':'Design & materials selected','pr5s':'Regulatory registration','pr6s':'Sourcing & procurement','pr7s':'GMPC-standard manufacturing','pr8s':'Export & door delivery','off-label':'Our Offices','off-hq':'R&D Factory','nl-cl':'Clients','cl-eye':'Trusted Worldwide','cl-h':"Brands We've Helped Build",'cl-sub':'We work under strict confidentiality — client identities are protected. Below are representative partners by region and category.','ts1q':'"BONIX managed everything from formula to delivery. Communication was fast and clear — we launched our serum line three months ahead of schedule."','ts1n':'Skincare Brand Founder','ts1r':'United States','ts2q':'"As a first-time brand owner, I needed guidance on EU compliance. Their team handled CPNP registration and made the whole process painless."','ts2n':"Men's Grooming Brand",'ts2r':'Germany','ts3q':'"The quality matched premium Japanese standards at a fraction of our previous cost. On-site QC gave us total peace of mind."','ts3n':'Haircare Brand','ts3r':'Japan','ct-eye':'Get In Touch','ct-h':'Start Your Project Today','ct-h2':"We're here to help",'ct-p':'Whether you have a full brief or just an idea — reach out. We respond within 24 hours.','cm1l':'WhatsApp','cm2l':'WeChat','cm3l':'Email','cm4l':'Phone','ft':'Send an Inquiry','fs':"We'll reply within 24 hours.",'fl1':'Name<span class="req">*</span>','fl2':'Company','fl3':'Email<span class="req">*</span>','fl-phone':'Phone','fl4':'Service Model','fl5':'Your Brief<span class="req">*</span>','fo1':'OEM — Contract Manufacturing','fo2':'ODM — Design & Development','fo3':'Semi-Finished Supply','fo4':'Not sure yet','fsb':'Send Inquiry →','fc1h':'Services','fc1a':'OEM Manufacturing','fc1b':'ODM Development','fc1c':'Semi-Finished Supply','fc1d':'Product Range','fc2h':'Company','fc2a':'Manufacturing Standards','fc2b':'Certifications','fc2c':'Our Process','fc3h':'Contact','fc3l':'Guangzhou · Chengdu','fp':'Professional personal care ODM & OEM manufacturing in China. GMPC & ISO 22716 certified.','fcopy':'© 2026 BONIX. All rights reserved.','mc1':'WhatsApp Us','mc2':'Send Inquiry'},
-zh:{'nl-svc':'服务模式','nl-prod':'产品品类','nl-qual':'生产标准','nl-cert':'资质认证','nl-proc':'合作流程','nl-con':'联系我们','nl-cta':'立即询价','h-eye':'GMPC · ISO 22716 · 符合FDA标准的制造','h-sub':'From formula to finished product — your trusted personal care manufacturing base in China.','h-btn1':'WhatsApp联系','h-btn2':'我们的服务','hb1':'✓ GMPC认证','hb2':'✓ ISO 22716:2007','hb3':'✓ 符合FDA标准','hb4':'✓ 16大产品品类','ts1':'产品品类','ts2':'服务模式','ts3':'从需求到交付','ts4':'广州 · 成都','ts4b':'国内办公室','ts5':'24小时','ts5b':'回复保证','nl-why':'选择我们','why-eye':'我们的部门','why-h':'全能力的<br>制造团队','why-sub':'六大专职部门协同合作,在同一屋檐下,将您的产品从概念带到全球交付。','d1t':'业务部','d1d':'您专属的海外对接窗口——管理沟通、订单和整个项目进度。','d2t':'研发部','d2d':'配方开发、来样仿制和样品迭代——背靠经稳定性测试的配方库。','d3t':'生产部','d3d':'GMPC标准车间配备自动化产线——可生产面膜、膏霜、乳液、啫喱及水剂产品。','d4t':'产品法规部','d4d':'确保原料、配方和标签合规——处理产品备案,助您通关每个市场。','d5t':'市场策划部','d5d':'国际化视野的创意策划——概念、定位、包装设计与产品策略。','d6t':'品质控制部','d6d':'每个环节都检验——原料、过程和成品——确保每一批都符合规格。','svc-eye':'我们如何与您合作','svc-h':'灵活的制造合作方式','svc-sub':'OEM代工、ODM研发、半成品供应——按您期望的合作方式,从配方到可上市的成品。','svc1t':'OEM — 来样加工','svc1d':'您提供配方或参考样品,我们按您的规格生产,提供全套包装服务。','svc1l':'查看流程 →','svc2t':'ODM — 研发设计制造','svc2d':'从我们的配方库选择,或共同开发新产品,贴您自己的品牌上市。','svc2l':'查看流程 →','svc3t':'半成品加工 — 料体供应','svc3d':'我们供应成熟的大货料体,供您在自己的工厂灌装或后续加工。','svc3l':'查看流程 →','prod-eye':'产品范围','prod-h':'16大可定制品类','prod-sub':'从洁面到彩妆——覆盖护肤、身体、护发和彩妆的全品类ODM。您的品牌、您的包装、您的配方。','pvcap':'图为中性样品 — 可完全按您的品牌定制','qual-eye':'生产标准','qual-h':'建立在GMPC标准车间之上','qual-p1':'我们的合作工厂按照ISO 22716:2007质量标准体系管理，建立了全新的GMPC标准车间，配备了一系列最先进的生产设备。','qual-p2':'从研发、乳化到灌装、贴标和质量管控，每一个环节都遵循国际化妆品GMP标准——确保您的产品符合欧盟、美国和亚洲市场的法规要求。','qual-sub':'我们的合作工厂按照ISO 22716:2007质量体系管理，建有全新的GMPC标准车间——研发、生产、包装一体化。','st1t':'研发','st1d':'研发实验室在严格的质量规范下开发并测试每一款配方——从概念到稳定性验证的成品。','st2t':'生产','st2d':'先进的乳化和自动化生产线在受控的GMPC标准环境中生产大货，并进行过程质量检测。','st3t':'包装与检验','st3d':'灌装、贴标、最终质检和细致打包——每一批订单出厂前都经过检验。','qf1':'质量体系','qf2':'标准车间','qf3':'FDA标准指南','eq1':'乳化车间','eq2':'贴标机','eq3':'自动化生产车间','eq4':'风淋室','eq5':'生产车间','cert-eye':'质量保证','cert-h':'国际认证。<br>权威机构认可。','cert-sub':'Our manufacturing operates under internationally recognised quality and safety certifications — independently audited and renewed.','c1body':'化妆品良好生产规范（GMPC），完全符合美国FDA指南。认证范围涵盖护肤、护发、啫喱、膏霜乳液，含眼部护肤及婴幼儿护肤品生产条件。','c1iss':'认证机构：','c1val':'有效期至 2026年12月16日','c2body':'化妆品良好生产规范国际标准——全球行业品质基准，由DEKRA每年独立审核。','c2iss':'认证机构：','c2val':'有效期至 2026年12月16日','proc-eye':'合作方式','proc-eye':'我们的模式','proc-h':'我们如何合作','pr1':'沟通意向','pr2':'签订合同','pr3':'确定产品','pr4':'确定包装','pr5':'申请备案','pr6':'购买材料','pr7':'开始加工','pr8':'完成交付','proc-desc':'从初次沟通到最终交付，一条清晰、成熟的路径——八个步骤，全程托管，没有意外。','proc-btn':'发起您的项目 ↗','pr1s':'沟通您的需求与目标','pr2s':'确认条款与协议','pr3s':'配方与样品确认','pr4s':'设计与包材选定','pr5s':'法规备案注册','pr6s':'原料采购','pr7s':'GMPC标准生产','pr8s':'出口与送货上门','off-label':'我们的办事处','off-hq':'研发工厂','nl-cl':'客户','cl-eye':'全球信赖','cl-h':'我们助力打造的品牌','cl-sub':'我们严格保密——客户身份受到保护。以下是按地区和品类划分的代表性合作伙伴。','ts1q':'"BONIX 从配方到交付全程把控。沟通快速清晰——我们的精华系列比计划提前三个月上市。"','ts1n':'护肤品牌创始人','ts1r':'美国','ts2q':'"作为首次创业的品牌主，我需要欧盟合规方面的指导。他们的团队处理了CPNP注册，让整个流程毫无压力。"','ts2n':'男士护理品牌','ts2r':'德国','ts3q':'"品质达到日本高端标准，成本却远低于以往。现场质检让我们完全放心。"','ts3n':'护发品牌','ts3r':'日本','ct-eye':'联系我们','ct-h':'立即发起您的项目','ct-h2':'我们随时为您服务','ct-p':'无论有完整方案还是初步想法——联系我们，24小时内回复。','cm1l':'WhatsApp','cm2l':'微信','cm3l':'邮箱','cm4l':'电话','ft':'发送询盘','fs':'我们将在24小时内回复。','fl1':'姓名<span class="req">*</span>','fl2':'公司名称','fl3':'邮箱<span class="req">*</span>','fl-phone':'电话','fl4':'服务模式','fl5':'需求描述<span class="req">*</span>','fo1':'OEM — 来样加工','fo2':'ODM — 研发设计','fo3':'半成品加工','fo4':'尚未确定','fsb':'发送询盘 →','fc1h':'服务','fc1a':'OEM代工','fc1b':'ODM研发','fc1c':'半成品供应','fc1d':'产品范围','fc2h':'公司','fc2a':'生产标准','fc2b':'资质认证','fc2c':'合作流程','fc3h':'联系方式','fc3l':'广州 · 成都','fp':'专业个护ODM & OEM代加工制造,GMPC及ISO 22716认证。','fcopy':'© 2026 BONIX. 保留所有权利.','mc1':'WhatsApp联系','mc2':'发送询盘'}
+en:{'fac-eye':'Scale & Capability','fac-h':'Our Facility & Capacity','fac-sub':'A large-scale, modern manufacturing base running 20 intelligent production lines — built to deliver at any volume.','fac-s1':'Employees','fac-s2':'Equipment Units','fac-s3':'Cleanroom','cap-s1':'Production Lines','cap-s5':'Daily Output*','fac3f1':'17 lotion & cream lines · 3 mask lines','fac3f2':'150,000 bottles/day · 500,000 mask sheets/day','equip-eye':'Precision Technology & Standards','equip-h':'Our Equipment & Quality','equip-sub':'Industry-leading machinery within a GMPC-standard environment — precision and consistency at every production stage.','eq1t':'Vacuum Emulsifying System','eq2t':'Automated Water Treatment','eq3t':'RO Pure Water System','eq4t':'High-Speed Filling Line','eq5t':'GMPC Production Workshop','eq6t':'Emulsifying Workshop','eq7t':'Filling Line','eq8t':'Packaging Workshop','equip-gmpc-desc':'All equipment operates within a GMPC-standard environment with in-process quality checks at every stage.','nl-fac':'Facility','nl-cert':'Certifications','nl-prod':'Products','nl-svc':'Services','nl-proc':'Process','nl-con':'Contact','nl-cta':'Get a Quote','h-eye':'GMPC · ISO 22716 · FDA-aligned Manufacturing','h-sub':"We connect international personal care brands with a certified ODM manufacturing partner in Guangzhou. Skincare, body care, hair care and more — from formula to finished product.",'h-btn1':'WhatsApp Us','h-btn2':'Our Services','hb1':'✓ GMPC Certified','hb2':'✓ ISO 22716:2007','hb3':'✓ FDA-aligned','hb4':'✓ 16 Product Categories','ts1':'Product Categories','ts2':'Service Models','ts3':'From Brief to Delivery','ts4':'Guangzhou · Chengdu','ts4b':'China Offices','ts5':'24h','ts5b':'Response Guarantee','nl-why':'Why Us','why-eye':'Our Departments','why-h':'A Full-Capability<br>Manufacturing Team','why-sub':'Six dedicated departments work together to take your product from concept to global delivery — under one roof.','d1t':'Business Dept','d1d':'Your dedicated overseas point of contact — managing communication, orders and the entire project timeline.','d2t':'R&D Dept','d2d':'Formula development, reverse engineering and sample iteration — backed by a stability-tested formula library.','d3t':'Production Dept','d3d':'GMPC-standard workshops with automated lines — capacity for mask, cream, emulsion, gel and liquid products.','d4t':'Regulatory Dept','d4d':'Ensuring ingredient, formula and label compliance — handling product filing so you clear every market\'s border.','d5t':'Marketing Dept','d5d':'Creative planning with an international perspective — concept, positioning, packaging design and product strategy.','d6t':'Quality Control Dept','d6d':'Inspection at every stage — raw materials, in-process and finished goods — so every batch meets specification.','svc-eye':'How We Work With You','svc-h':'Flexible Manufacturing Solutions','svc-sub':'OEM, ODM or semi-finished supply — we adapt to how you want to work, from your formula to a market-ready product.','svc1t':'OEM — Contract Manufacturing','svc1d':'You provide the formula or a reference sample; we manufacture to your specification with full packaging service.','svc1l':'View process →','svc2t':'ODM — Design & Development','svc2d':'Choose from our formula library or co-develop a new product, then launch it under your own brand.','svc2l':'View process →','svc3t':'Semi-Finished Supply','svc3d':'We supply proven bulk formulations for you to fill or further process at your own facility.','svc3l':'View process →','prod-eye':'Product Range','prod-h':'16 Customisable Categories','prod-sub':'From cleansers to colour cosmetics — full-spectrum ODM across skincare, body, hair and makeup. Your brand, your packaging, your formula.','pvcap':'Neutral samples shown — fully customisable to your brand','st2t':'Production','st2d':'Advanced emulsifying and automated production lines manufacture bulk product in a controlled, GMPC-standard environment with in-process quality checks.','cert-eye':'Quality Assurance','cdoc1':'GMPC — Good Manufacturing Practice of Cosmetics','cdoc2':'ISO 22716:2007 — Cosmetics GMP','cert-h':'Internationally Certified.<br>Independently Verified.','cert-sub':"Our partner facility in Guangzhou holds dual DEKRA certification — one of the world's most respected testing bodies, operating in 60+ countries.",'c1body':'Good Manufacturing Practice of Cosmetics — aligned with U.S. FDA guidelines. Covers skincare, hair care, gel, cream and emulsion including eye care and baby products.','c1iss':'Issuer: ','c1val':'Valid until 16 December 2026','c2body':'International standard for cosmetics Good Manufacturing Practices — the global industry benchmark. Audited annually by DEKRA.','c2iss':'Issuer: ','c2val':'Valid until 16 December 2026','proc-eye':'Our Model','proc-h':'How We Work','pr1':'Discuss Intent','pr2':'Sign Contract','pr3':'Confirm Product','pr4':'Confirm Packaging','pr5':'Apply for Filing','pr6':'Purchase Materials','pr7':'Begin Production','pr8':'Complete Delivery','proc-desc':'A clear, proven path from first conversation to final delivery — eight steps, fully managed, with no surprises along the way.','proc-btn':'Start Your Project ↗','pr1s':'Share your needs & goals','pr2s':'Terms & agreement confirmed','pr3s':'Formula & sample approval','pr4s':'Design & materials selected','pr5s':'Regulatory registration','pr6s':'Sourcing & procurement','pr7s':'GMPC-standard manufacturing','pr8s':'Export & door delivery','off-label':'Our Offices','off-hq':'R&D Factory','nl-cl':'Clients','cl-eye':'Trusted Worldwide','cl-h':"Brands We've Helped Build",'cl-sub':'We work under strict confidentiality — client identities are protected. Below are representative partners by region and category.','ts1q':'"BONIX managed everything from formula to delivery. Communication was fast and clear — we launched our serum line three months ahead of schedule."','ts1n':'Skincare Brand Founder','ts1r':'United States','ts2q':'"As a first-time brand owner, I needed guidance on EU compliance. Their team handled CPNP registration and made the whole process painless."','ts2n':"Men's Grooming Brand",'ts2r':'Germany','ts3q':'"The quality matched premium Japanese standards at a fraction of our previous cost. On-site QC gave us total peace of mind."','ts3n':'Haircare Brand','ts3r':'Japan','ct-eye':'Get In Touch','ct-h':'Start Your Project Today','ct-h2':"We're here to help",'ct-p':'Whether you have a full brief or just an idea — reach out. We respond within 24 hours.','cm1l':'WhatsApp','cm2l':'WeChat','cm3l':'Email','cm4l':'Phone','ft':'Send an Inquiry','fs':"We'll reply within 24 hours.",'fl1':'Name<span class="req">*</span>','fl2':'Company','fl3':'Email<span class="req">*</span>','fl-phone':'Phone','fl4':'Service Model','fl5':'Your Brief<span class="req">*</span>','fo1':'OEM — Contract Manufacturing','fo2':'ODM — Design & Development','fo3':'Semi-Finished Supply','fo4':'Not sure yet','fsb':'Send Inquiry →','fc1h':'Services','fc1a':'OEM Manufacturing','fc1b':'ODM Development','fc1c':'Semi-Finished Supply','fc1d':'Product Range','fc2h':'Company','fc2a':'Manufacturing Standards','fc2b':'Certifications','fc2c':'Our Process','fc3h':'Contact','fc3l':'Guangzhou · Chengdu','fp':'Professional personal care ODM & OEM manufacturing in China. GMPC & ISO 22716 certified.','fcopy':'© 2026 BONIX. All rights reserved.','mc1':'WhatsApp Us','mc2':'Send Inquiry'},
+zh:{'fac-eye':'规模与实力','fac-h':'工厂规模与生产实力','fac-sub':'大规模现代化生产基地，20条智能化生产线运行——支持任意批量的稳定交付。','fac-s1':'在职员工','fac-s2':'一流设备','fac-s3':'净化车间','cap-s1':'智能化产线','cap-s5':'日产能*','fac3f1':'17条水乳膏霜线 · 3条面膜线','fac3f2':'日产15万瓶 · 日产50万片面膜','equip-eye':'精密技术与标准','equip-h':'顶尖设备与生产标准','equip-sub':'行业领先的设备运行在GMPC标准环境中——每个生产环节都保持精度与一致性。','eq1t':'真空乳化制造系统','eq2t':'全自动智能型水处理','eq3t':'RO反渗透纯水系统','eq4t':'全自动高速灌包生产线','eq5t':'GMPC标准生产车间','eq6t':'乳化车间','eq7t':'灌装线','eq8t':'包装车间','equip-gmpc-desc':'所有设备均在GMPC标准环境中运行，每个环节均进行过程质量检测。','nl-fac':'工厂实力','nl-cert':'资质认证','nl-prod':'产品品类','nl-svc':'服务模式','nl-proc':'合作流程','nl-con':'联系我们','nl-cta':'立即询价','h-eye':'GMPC · ISO 22716 · 符合FDA标准的制造','h-sub':'From formula to finished product — your trusted personal care manufacturing base in China.','h-btn1':'WhatsApp联系','h-btn2':'我们的服务','hb1':'✓ GMPC认证','hb2':'✓ ISO 22716:2007','hb3':'✓ 符合FDA标准','hb4':'✓ 16大产品品类','ts1':'产品品类','ts2':'服务模式','ts3':'从需求到交付','ts4':'广州 · 成都','ts4b':'国内办公室','ts5':'24小时','ts5b':'回复保证','nl-why':'选择我们','why-eye':'我们的部门','why-h':'全能力的<br>制造团队','why-sub':'六大专职部门协同合作,在同一屋檐下,将您的产品从概念带到全球交付。','d1t':'业务部','d1d':'您专属的海外对接窗口——管理沟通、订单和整个项目进度。','d2t':'研发部','d2d':'配方开发、来样仿制和样品迭代——背靠经稳定性测试的配方库。','d3t':'生产部','d3d':'GMPC标准车间配备自动化产线——可生产面膜、膏霜、乳液、啫喱及水剂产品。','d4t':'产品法规部','d4d':'确保原料、配方和标签合规——处理产品备案,助您通关每个市场。','d5t':'市场策划部','d5d':'国际化视野的创意策划——概念、定位、包装设计与产品策略。','d6t':'品质控制部','d6d':'每个环节都检验——原料、过程和成品——确保每一批都符合规格。','svc-eye':'我们如何与您合作','svc-h':'灵活的制造合作方式','svc-sub':'OEM代工、ODM研发、半成品供应——按您期望的合作方式,从配方到可上市的成品。','svc1t':'OEM — 来样加工','svc1d':'您提供配方或参考样品,我们按您的规格生产,提供全套包装服务。','svc1l':'查看流程 →','svc2t':'ODM — 研发设计制造','svc2d':'从我们的配方库选择,或共同开发新产品,贴您自己的品牌上市。','svc2l':'查看流程 →','svc3t':'半成品加工 — 料体供应','svc3d':'我们供应成熟的大货料体,供您在自己的工厂灌装或后续加工。','svc3l':'查看流程 →','prod-eye':'产品范围','prod-h':'16大可定制品类','prod-sub':'从洁面到彩妆——覆盖护肤、身体、护发和彩妆的全品类ODM。您的品牌、您的包装、您的配方。','pvcap':'图为中性样品 — 可完全按您的品牌定制','st2t':'生产','st2d':'先进的乳化和自动化生产线在受控的GMPC标准环境中生产大货，并进行过程质量检测。','cert-eye':'质量保证','cert-h':'国际认证。<br>权威机构认可。','cert-sub':'Our manufacturing operates under internationally recognised quality and safety certifications — independently audited and renewed.','c1body':'化妆品良好生产规范（GMPC），完全符合美国FDA指南。认证范围涵盖护肤、护发、啫喱、膏霜乳液，含眼部护肤及婴幼儿护肤品生产条件。','c1iss':'认证机构：','c1val':'有效期至 2026年12月16日','c2body':'化妆品良好生产规范国际标准——全球行业品质基准，由DEKRA每年独立审核。','c2iss':'认证机构：','c2val':'有效期至 2026年12月16日','proc-eye':'我们的模式','proc-h':'我们如何合作','pr1':'沟通意向','pr2':'签订合同','pr3':'确定产品','pr4':'确定包装','pr5':'申请备案','pr6':'购买材料','pr7':'开始加工','pr8':'完成交付','proc-desc':'从初次沟通到最终交付，一条清晰、成熟的路径——八个步骤，全程托管，没有意外。','proc-btn':'发起您的项目 ↗','pr1s':'沟通您的需求与目标','pr2s':'确认条款与协议','pr3s':'配方与样品确认','pr4s':'设计与包材选定','pr5s':'法规备案注册','pr6s':'原料采购','pr7s':'GMPC标准生产','pr8s':'出口与送货上门','off-label':'我们的办事处','off-hq':'研发工厂','nl-cl':'客户','cl-eye':'全球信赖','cl-h':'我们助力打造的品牌','cl-sub':'我们严格保密——客户身份受到保护。以下是按地区和品类划分的代表性合作伙伴。','ts1q':'"BONIX 从配方到交付全程把控。沟通快速清晰——我们的精华系列比计划提前三个月上市。"','ts1n':'护肤品牌创始人','ts1r':'美国','ts2q':'"作为首次创业的品牌主，我需要欧盟合规方面的指导。他们的团队处理了CPNP注册，让整个流程毫无压力。"','ts2n':'男士护理品牌','ts2r':'德国','ts3q':'"品质达到日本高端标准，成本却远低于以往。现场质检让我们完全放心。"','ts3n':'护发品牌','ts3r':'日本','ct-eye':'联系我们','ct-h':'立即发起您的项目','ct-h2':'我们随时为您服务','ct-p':'无论有完整方案还是初步想法——联系我们，24小时内回复。','cm1l':'WhatsApp','cm2l':'微信','cm3l':'邮箱','cm4l':'电话','ft':'发送询盘','fs':'我们将在24小时内回复。','fl1':'姓名<span class="req">*</span>','fl2':'公司名称','fl3':'邮箱<span class="req">*</span>','fl-phone':'电话','fl4':'服务模式','fl5':'需求描述<span class="req">*</span>','fo1':'OEM — 来样加工','fo2':'ODM — 研发设计','fo3':'半成品加工','fo4':'尚未确定','fsb':'发送询盘 →','fc1h':'服务','fc1a':'OEM代工','fc1b':'ODM研发','fc1c':'半成品供应','fc1d':'产品范围','fc2h':'公司','fc2a':'生产标准','fc2b':'资质认证','fc2c':'合作流程','fc3h':'联系方式','fc3l':'广州 · 成都','fp':'专业个护ODM & OEM代加工制造,GMPC及ISO 22716认证。','fcopy':'© 2026 BONIX. 保留所有权利.','mc1':'WhatsApp联系','mc2':'发送询盘'}
 };
 let cl='en';
 let prodTipEl=null;
