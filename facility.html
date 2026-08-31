@@ -11,7 +11,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BONIX facility.html 预览</title>
+<title>BONIX — Manufacturing Capabilities</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -24,259 +24,73 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'IBM Plex Sans', sans-serif; background: var(--off-white); color: #1c2b26; }
 
-  .preview-note {
-    background: #fff3cd; color: #6b5a1f; text-align: center;
-    padding: 10px 16px; font-size: 13px; border-bottom: 1px solid #e6d8a8;
-  }
-
   /* Nav */
   .nav {
     display: flex; justify-content: space-between; align-items: center;
     padding: 20px 5%; background: #fff; border-bottom: 1px solid #eee2c8;
   }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--brand-green); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--brand-green); text-decoration: none; }
   .logo b { font-weight: 700; }
-  .nav-links { display: flex; gap: 26px; font-size: 14px; color: #555; } .nav-links a { text-decoration:none; color:#555; } .nav-links a:hover{ color:var(--brand-green);}
+  .nav-links { display: flex; gap: 26px; font-size: 14px; } .nav-links a { text-decoration:none; color:#555; } .nav-links a:hover{ color:var(--brand-green);}
   .nav-links a.active { color: var(--brand-green); font-weight: 600; border-bottom: 2px solid var(--brand-green); padding-bottom: 4px; }
   .nav-right { display: flex; align-items: center; gap: 16px; }
   .lang-toggle { display: flex; font-size: 12px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; }
-  .lang-toggle span { padding: 5px 10px; }
-  .lang-toggle .on { background: var(--brand-green); color: #fff; }
-  .quote-btn { background: #12211c; color: #fff; padding: 9px 18px; border-radius: 4px; font-size: 13px; font-weight: 600; }
+  .lang-toggle button { padding: 5px 10px; background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: #555; }
+  .lang-toggle button.on { background: var(--brand-green); color: #fff; }
+  .quote-btn { background: #12211c; color: #fff; padding: 9px 18px; border-radius: 4px; font-size: 13px; font-weight: 600; text-decoration: none; }
 
   /* Page header */
-  .page-header {
-    padding: 60px 5% 40px;
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto;
-  }
+  .page-header { padding: 60px 5% 40px; text-align: center; max-width: 720px; margin: 0 auto; }
   .eyebrow { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
   .page-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 600; color: var(--brand-green); margin-bottom: 14px; }
   .page-desc { font-size: 15.5px; line-height: 1.7; color: #4a5550; }
 
-  /* Stat row */
-  .stat-row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    max-width: 1360px;
-    margin: 0 auto 50px;
-    padding: 0 5%;
-  }
-  .stat-card {
-    background: #fff;
-    border: 1px solid #eee2c8;
-    border-radius: 6px;
-    padding: 24px 12px;
-    text-align: center;
-  }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--brand-green); }
-  .stat-label { font-size: 12px; color: #6b7570; margin-top: 6px; }
+  /* Section header shared style */
+  .sec-header { max-width: 720px; margin: 0 auto 36px; padding: 60px 5% 0; text-align: center; }
+  .sec-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; color: var(--brand-green); margin-top: 10px; }
 
-  /* Image grid */
-  .image-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 16px;
-    max-width: 1360px;
-    margin: 0 auto 30px;
-    padding: 0 5%;
-  }
-  .image-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
-  .image-grid .main-img { aspect-ratio: 3/4; }
-  .side-imgs { display: flex; flex-direction: column; gap: 16px; }
-  .side-imgs > div { aspect-ratio: 16/9.3; overflow: hidden; border-radius: 6px; }
+  /* Capacity stats */
+  .capacity-text-section { max-width: 1000px; margin: 0 auto 70px; padding: 0 5%; }
+  .capacity-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid #eee2c8; border-bottom: 1px solid #eee2c8; }
+  .capacity-stat { padding: 32px 16px; text-align: center; border-right: 1px solid #eee2c8; cursor: default; transition: background 0.25s ease; position: relative; }
+  .capacity-stat:last-child { border-right: none; }
+  .capacity-stat:hover { background: #fff; }
+  .capacity-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; color: var(--brand-green); transition: transform 0.25s ease; }
+  .capacity-stat:hover .capacity-num { transform: translateY(-2px); color: var(--gold); }
+  .capacity-label { font-size: 12.5px; color: #6b7570; margin-top: 8px; letter-spacing: 0.3px; }
+  .capacity-detail { font-size: 12px; line-height: 1.55; color: #6b7570; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease; margin-top: 0; }
+  .capacity-stat:hover .capacity-detail { max-height: 120px; opacity: 1; margin-top: 12px; }
+  .capacity-hint { text-align: center; font-size: 11.5px; color: #b0a98f; margin-top: 14px; letter-spacing: 0.3px; }
+  @media (max-width: 800px) { .capacity-grid { grid-template-columns: repeat(2, 1fr); } .capacity-stat { border-bottom: 1px solid #eee2c8; } .capacity-stat:nth-child(2n) { border-right: none; } }
 
-  /* Production breakdown */
-  .breakdown {
-    max-width: 1360px;
-    margin: 0 auto 60px;
-    padding: 28px 5%;
-  }
-  .breakdown-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    background: #fff;
-    border: 1px solid #eee2c8;
-    border-radius: 6px;
-    padding: 28px 36px;
-  }
-  .breakdown-col h4 {
-    font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 14px; font-weight: 600;
-  }
-  .breakdown-col div.line {
-    font-size: 15px; color: #2b3a35; padding: 8px 0;
-    border-bottom: 1px solid #f0ebe0;
-  }
-  .breakdown-col div.line:last-child { border-bottom: none; }
-
-  /* Dark equipment section */
-  .equipment-section {
-    background: var(--dark-bg);
-    padding: 70px 5%;
-    color: #fff;
-  }
+  /* Equipment section */
+  .equipment-section { background: var(--dark-bg); padding: 70px 5%; color: #fff; }
   .eq-header { max-width: 720px; margin: 0 auto 40px; text-align: center; }
   .eq-header .eyebrow { color: var(--gold); }
   .eq-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; margin-bottom: 12px; }
   .eq-header p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
-
-  .eq-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    max-width: 1360px;
-    margin: 0 auto;
-  }
-  .eq-card {
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .eq-img {
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-  }
-  .eq-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease, filter 0.3s ease;
-  }
-  .eq-img:hover img {
-    transform: scale(1.04);
-    filter: brightness(0.35);
-  }
-  .eq-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-  .eq-img:hover .eq-overlay {
-    opacity: 1;
-  }
-  .eq-overlay h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: #c8a96a;
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
-  .eq-overlay p {
-    font-size: 12.5px;
-    line-height: 1.55;
-    color: rgba(255,255,255,0.9);
-  }
-
-  @media (max-width: 900px) {
-    .stat-row { grid-template-columns: repeat(3, 1fr); }
-    .stat-card:nth-child(4), .stat-card:nth-child(5) { grid-column: span 1; }
-    .image-grid { grid-template-columns: 1fr; }
-    .breakdown-grid { grid-template-columns: 1fr; }
-    .eq-grid { grid-template-columns: repeat(2, 1fr); }
-    .nav-links { display: none; }
-  }
+  .eq-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1360px; margin: 0 auto; }
+  .eq-card { border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+  .eq-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+  .eq-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease, filter 0.3s ease; }
+  .eq-img:hover img { transform: scale(1.04); filter: brightness(0.35); }
+  .eq-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
+  .eq-img:hover .eq-overlay { opacity: 1; }
+  .eq-overlay h4 { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: #c8a96a; margin-bottom: 8px; line-height: 1.3; }
+  .eq-overlay p { font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.9); }
 
   /* CTA */
-  .cta-section {
-    background: var(--off-white);
-    text-align: center;
-    padding: 70px 5%;
-  }
-  .cta-section h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 30px;
-    color: var(--brand-green);
-    margin-bottom: 16px;
-  }
-  .cta-btn {
-    display: inline-block;
-    background: var(--brand-green);
-    color: #fff;
-    padding: 14px 32px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 10px;
+  .cta-section { background: var(--off-white); text-align: center; padding: 70px 5%; }
+  .cta-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--brand-green); margin-bottom: 16px; }
+  .cta-btn { display: inline-block; background: var(--brand-green); color: #fff; padding: 14px 32px; border-radius: 4px; font-size: 14px; font-weight: 600; text-decoration: none; margin-top: 10px; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .capacity-grid { grid-template-columns: repeat(3, 1fr); }
+    .eq-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  .capacity-text-section {
-    max-width: 1000px;
-    margin: 0 auto 70px;
-    padding: 0 5%;
-  }
-  .capacity-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    border-top: 1px solid #eee2c8;
-    border-bottom: 1px solid #eee2c8;
-  }
-  .capacity-stat {
-    padding: 32px 16px;
-    text-align: center;
-    border-right: 1px solid #eee2c8;
-    cursor: default;
-    transition: background 0.25s ease;
-    position: relative;
-  }
-  .capacity-stat:last-child { border-right: none; }
-  .capacity-stat:hover { background: #fff; }
-  .capacity-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--brand-green);
-    transition: transform 0.25s ease;
-  }
-  .capacity-stat:hover .capacity-num { transform: translateY(-2px); color: var(--gold); }
-  .capacity-label {
-    font-size: 12.5px;
-    color: #6b7570;
-    margin-top: 8px;
-    letter-spacing: 0.3px;
-  }
-  .capacity-detail {
-    font-size: 12px;
-    line-height: 1.55;
-    color: #6b7570;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
-    margin-top: 0;
-  }
-  .capacity-stat:hover .capacity-detail {
-    max-height: 120px;
-    opacity: 1;
-    margin-top: 12px;
-  }
-  .capacity-hint {
-    text-align: center;
-    font-size: 11.5px;
-    color: #b0a98f;
-    margin-top: 14px;
-    letter-spacing: 0.3px;
-  }
-  @media (max-width: 800px) {
-    .capacity-grid { grid-template-columns: repeat(2, 1fr); }
-    .capacity-stat { border-bottom: 1px solid #eee2c8; }
-    .capacity-stat:nth-child(2n) { border-right: none; }
-  }
-
+  /* Footer */
   .site-footer { background: #12211c; color: rgba(255,255,255,0.85); padding: 60px 5% 30px; margin-top: 40px; }
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; max-width: 1360px; margin: 0 auto; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; margin-bottom: 14px; }
@@ -287,152 +101,149 @@
   .footer-col a:hover { color: #c8a96a; }
   .footer-bottom { max-width: 1360px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4); }
   @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-/* Cookie consent banner */
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:#16201b;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;}
-#cookie-banner.show{transform:translateY(0);}
-#cookie-banner p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.65;flex:1;min-width:220px;margin:0;}
-#cookie-banner p a{color:#c8a96a;text-decoration:underline;}
-.cookie-btns{display:flex;gap:.65rem;flex-shrink:0;}
-#cookie-accept{padding:9px 24px;background:#2f5d4f;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
-#cookie-decline{padding:9px 20px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:13px;cursor:pointer;font-family:inherit;}
 
-/* Lang toggle buttons */
-.lang-toggle button{padding:5px 10px;background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#555;}
-.lang-toggle button.on{background:#2f5d4f;color:#fff;}
-
+  /* Cookie consent */
+  #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:#16201b;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;}
+  #cookie-banner.show{transform:translateY(0);}
+  #cookie-banner p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.65;flex:1;min-width:220px;margin:0;}
+  #cookie-banner p a{color:#c8a96a;text-decoration:underline;}
+  .cookie-btns{display:flex;gap:.65rem;flex-shrink:0;}
+  #cookie-accept{padding:9px 24px;background:#2f5d4f;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
+  #cookie-decline{padding:9px 20px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:13px;cursor:pointer;font-family:inherit;}
 </style>
 </head>
 <body>
 
-
 <nav class="nav">
   <a href="index.html" class="logo">BO<b>NIX</b></a>
   <div class="nav-links">
-    <a href="facility.html" class="active">Facility</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="index.html#services">Services</a>
-    <a href="products.html">Products</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="facility.html" class="active" data-en="Manufacturing Capabilities" data-zh="制造能力">Manufacturing Capabilities</a>
+    <a href="certifications.html" data-en="Certifications" data-zh="资质认证">Certifications</a>
+    <a href="index.html#services" data-en="Services" data-zh="服务模式">Services</a>
+    <a href="products.html" data-en="Products" data-zh="产品品类">Products</a>
+    <a href="index.html#contact" data-en="Contact" data-zh="联系我们">Contact</a>
   </div>
   <div class="nav-right">
-    <div class="lang-toggle"><button onclick="setLang('en')">EN</button><button onclick="setLang('zh')">中文</button></div>
-    <a href="index.html#contact" class="quote-btn">Get a Quote</a>
+    <div class="lang-toggle">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+    <a href="index.html#contact" class="quote-btn" data-en="Get a Quote" data-zh="立即询价">Get a Quote</a>
   </div>
 </nav>
 
-<div class="page-header">
-  <div class="eyebrow">Scale &amp; Capability</div>
-  <h1 class="page-title">Our Facility &amp; Capacity</h1>
-  <p class="page-desc">A large-scale, modern manufacturing base in Guangzhou — engineered to deliver consistent quality and reliable volume for brands at every stage of growth.</p>
+<div class="sec-header">
+  <div class="eyebrow" data-en="Facility &amp; Scale" data-zh="工厂与规模">Facility &amp; Scale</div>
+  <h2 data-en="Our Facility &amp; Scale" data-zh="工厂规模与实力">Our Facility &amp; Scale</h2>
 </div>
 
 <div class="capacity-text-section">
   <div class="capacity-grid">
-    <div class="capacity-stat" data-detail="A team of specialists spanning R&amp;D, quality control, production and logistics.">
+    <div class="capacity-stat">
       <div class="capacity-num">400+</div>
-      <div class="capacity-label">Employees</div>
-      <div class="capacity-detail">A team of specialists spanning R&amp;D, quality control, production and logistics.</div>
+      <div class="capacity-label" data-en="Employees" data-zh="在职员工">Employees</div>
+      <div class="capacity-detail" data-en="A team of specialists spanning R&amp;D, quality control, production and logistics." data-zh="横跨研发、质量控制、生产和物流的专家团队。">A team of specialists spanning R&amp;D, quality control, production and logistics.</div>
     </div>
-    <div class="capacity-stat" data-detail="Precision machinery covering emulsifying, filling, water treatment and packaging.">
+    <div class="capacity-stat">
       <div class="capacity-num">32+</div>
-      <div class="capacity-label">Equipment Units</div>
-      <div class="capacity-detail">Precision machinery covering emulsifying, filling, water treatment and packaging.</div>
+      <div class="capacity-label" data-en="Equipment Units" data-zh="一流设备">Equipment Units</div>
+      <div class="capacity-detail" data-en="Precision machinery covering emulsifying, filling, water treatment and packaging." data-zh="涵盖乳化、灌装、水处理和包装的精密设备。">Precision machinery covering emulsifying, filling, water treatment and packaging.</div>
     </div>
-    <div class="capacity-stat" data-detail="Controlled particle-count environment for hygienic, consistent formulation.">
+    <div class="capacity-stat">
       <div class="capacity-num">Class 100K</div>
-      <div class="capacity-label">Cleanroom</div>
-      <div class="capacity-detail">Controlled particle-count environment for hygienic, consistent formulation.</div>
+      <div class="capacity-label" data-en="Cleanroom" data-zh="净化车间">Cleanroom</div>
+      <div class="capacity-detail" data-en="Controlled particle-count environment for hygienic, consistent formulation." data-zh="可控的粒子数量环境，确保卫生、稳定的配方生产。">Controlled particle-count environment for hygienic, consistent formulation.</div>
     </div>
-    <div class="capacity-stat" data-detail="17 lotion &amp; cream lines and 3 mask lines, running in parallel.">
+    <div class="capacity-stat">
       <div class="capacity-num">20</div>
-      <div class="capacity-label">Production Lines</div>
-      <div class="capacity-detail">17 lotion &amp; cream lines and 3 mask lines, running in parallel.</div>
+      <div class="capacity-label" data-en="Production Lines" data-zh="智能化产线">Production Lines</div>
+      <div class="capacity-detail" data-en="17 lotion &amp; cream lines and 3 mask lines, running in parallel." data-zh="17条水乳膏霜线和3条面膜线并行运转。">17 lotion &amp; cream lines and 3 mask lines, running in parallel.</div>
     </div>
-    <div class="capacity-stat" data-detail="Up to 150,000 bottles or 500,000 mask sheets produced per day.">
+    <div class="capacity-stat">
       <div class="capacity-num">500K</div>
-      <div class="capacity-label">Daily Output*</div>
-      <div class="capacity-detail">Up to 150,000 bottles or 500,000 mask sheets produced per day.</div>
+      <div class="capacity-label" data-en="Daily Output*" data-zh="日产能*">Daily Output*</div>
+      <div class="capacity-detail" data-en="Up to 150,000 bottles or 500,000 mask sheets produced per day." data-zh="每日最高生产15万瓶产品或50万片面膜。">Up to 150,000 bottles or 500,000 mask sheets produced per day.</div>
     </div>
   </div>
-  <div class="capacity-hint">Hover over a number to see more</div>
+  <div class="capacity-hint" data-en="Hover over a number to see more" data-zh="悬停数字查看详情">Hover over a number to see more</div>
 </div>
 
 <section class="equipment-section">
   <div class="eq-header">
-    <div class="eyebrow">Equipment &amp; Quality</div>
-    <h2>Our Equipment &amp; Quality</h2>
-    <p>Industry-leading machinery within a GMPC-standard environment — precision and consistency at every production stage.</p>
+    <div class="eyebrow" data-en="Equipment &amp; Quality" data-zh="设备与质量">Equipment &amp; Quality</div>
+    <h2 data-en="Our Equipment &amp; Quality" data-zh="顶尖设备与生产标准">Our Equipment &amp; Quality</h2>
+    <p data-en="Industry-leading machinery within a GMPC-standard environment — precision and consistency at every production stage." data-zh="行业领先的设备在GMPC标准环境中运行——每个生产环节都保持精度与一致性。">Industry-leading machinery within a GMPC-standard environment — precision and consistency at every production stage.</p>
   </div>
   <div class="eq-grid">
-        <div class="eq-card">
+    <div class="eq-card">
       <div class="eq-img">
         <img src="images/vacuum-emulsifying-amp-mixing-system.png" alt="Vacuum Emulsifying &amp; Mixing System">
         <div class="eq-overlay">
-          <h4>Vacuum Emulsifying &amp; Mixing System</h4>
-          <p>High-precision vacuum emulsification ensures uniform texture and stability across cream, lotion and gel formulations, minimizing air entrapment for consistent batch quality.</p>
+          <h4 data-en="Vacuum Emulsifying &amp; Mixing System" data-zh="真空乳化混合系统">Vacuum Emulsifying &amp; Mixing System</h4>
+          <p data-en="High-precision vacuum emulsification ensures uniform texture and stability across cream, lotion and gel formulations, minimizing air entrapment for consistent batch quality." data-zh="高精度真空乳化确保膏霜、乳液和啫喱配方质地均匀稳定，减少气泡，保证每批次质量一致。">High-precision vacuum emulsification ensures uniform texture and stability across cream, lotion and gel formulations, minimizing air entrapment for consistent batch quality.</p>
         </div>
       </div>
     </div>
-        <div class="eq-card">
+    <div class="eq-card">
       <div class="eq-img">
         <img src="images/vacuum-emulsifying-amp-mixing-system-2.png" alt="RO Water Purification System">
         <div class="eq-overlay">
-          <h4>RO Water Purification System</h4>
-          <p>Reverse-osmosis purification delivers pharmaceutical-grade process water, critical for formulation stability and shelf-life performance across every product line.</p>
+          <h4 data-en="RO Water Purification System" data-zh="RO反渗透纯水系统">RO Water Purification System</h4>
+          <p data-en="Reverse-osmosis purification delivers pharmaceutical-grade process water, critical for formulation stability and shelf-life performance across every product line." data-zh="反渗透纯化系统提供制药级工艺用水，对配方稳定性和每条产品线的货架期表现至关重要。">Reverse-osmosis purification delivers pharmaceutical-grade process water, critical for formulation stability and shelf-life performance across every product line.</p>
         </div>
       </div>
     </div>
-        <div class="eq-card">
+    <div class="eq-card">
       <div class="eq-img">
         <img src="images/ro-water-purification-system.png" alt="Automated Filling Line">
         <div class="eq-overlay">
-          <h4>Automated Filling Line</h4>
-          <p>Automated bottle filling with integrated inline inspection ensures fill-weight accuracy and reduces contamination risk at scale.</p>
+          <h4 data-en="Automated Filling Line" data-zh="全自动高速灌包生产线">Automated Filling Line</h4>
+          <p data-en="Automated bottle filling with integrated inline inspection ensures fill-weight accuracy and reduces contamination risk at scale." data-zh="配备在线检测的自动灌装设备，确保灌装精度并降低大规模生产中的污染风险。">Automated bottle filling with integrated inline inspection ensures fill-weight accuracy and reduces contamination risk at scale.</p>
         </div>
       </div>
     </div>
-        <div class="eq-card">
+    <div class="eq-card">
       <div class="eq-img">
         <img src="images/automated-filling-line.png" alt="Automated Labeling System">
         <div class="eq-overlay">
-          <h4>Automated Labeling System</h4>
-          <p>Precision labeling equipment ensures consistent placement and print quality across high-volume production runs.</p>
+          <h4 data-en="Automated Labeling System" data-zh="自动贴标系统">Automated Labeling System</h4>
+          <p data-en="Precision labeling equipment ensures consistent placement and print quality across high-volume production runs." data-zh="精密贴标设备确保高批量生产中标签位置一致、印刷质量稳定。">Precision labeling equipment ensures consistent placement and print quality across high-volume production runs.</p>
         </div>
       </div>
     </div>
-        <div class="eq-card">
+    <div class="eq-card">
       <div class="eq-img">
         <img src="images/automated-labeling-system.png" alt="High-Speed Tube Filling">
         <div class="eq-overlay">
-          <h4>High-Speed Tube Filling</h4>
-          <p>Dedicated tube-filling capability supports cream and gel formats at production speeds suited to large-volume orders.</p>
+          <h4 data-en="High-Speed Tube Filling" data-zh="高速软管灌装">High-Speed Tube Filling</h4>
+          <p data-en="Dedicated tube-filling capability supports cream and gel formats at production speeds suited to large-volume orders." data-zh="专用软管灌装设备，支持膏霜和啫喱产品的大批量订单生产速度。">Dedicated tube-filling capability supports cream and gel formats at production speeds suited to large-volume orders.</p>
         </div>
       </div>
     </div>
-        <div class="eq-card">
+    <div class="eq-card">
       <div class="eq-img">
         <img src="images/high-speed-tube-filling.png" alt="Production Line Overview">
         <div class="eq-overlay">
-          <h4>Production Line Overview</h4>
-          <p>A live view of our cleanroom-standard filling floor, running multiple product lines in parallel under continuous quality monitoring.</p>
+          <h4 data-en="Production Line Overview" data-zh="产线全景">Production Line Overview</h4>
+          <p data-en="A live view of our cleanroom-standard filling floor, running multiple product lines in parallel under continuous quality monitoring." data-zh="净化车间级别灌装车间的实景，多条产品线并行运转，并持续进行质量监控。">A live view of our cleanroom-standard filling floor, running multiple product lines in parallel under continuous quality monitoring.</p>
         </div>
       </div>
     </div>
-        <div class="eq-card">
+    <div class="eq-card">
       <div class="eq-img">
         <img src="images/production-line-overview.png" alt="Quality Control Laboratory">
         <div class="eq-overlay">
-          <h4>Quality Control Laboratory</h4>
-          <p>In-house QC laboratory conducts raw material, in-process and finished product testing, supporting our documented 99.8% batch pass rate.</p>
+          <h4 data-en="Quality Control Laboratory" data-zh="质量控制实验室">Quality Control Laboratory</h4>
+          <p data-en="In-house QC laboratory conducts raw material, in-process and finished product testing, supporting our documented 99.8% batch pass rate." data-zh="内部QC实验室对原材料、过程产品和成品进行检测，有力支撑了已记录在案的99.8%批次合格率。">In-house QC laboratory conducts raw material, in-process and finished product testing, supporting our documented 99.8% batch pass rate.</p>
         </div>
       </div>
     </div>
-        <div class="eq-card">
+    <div class="eq-card">
       <div class="eq-img">
         <img src="images/quality-control-laboratory.png" alt="Automated Warehousing System">
         <div class="eq-overlay">
-          <h4>Automated Warehousing System</h4>
-          <p>AGV-based automated warehousing streamlines finished goods storage and retrieval, supporting reliable export-ready fulfilment.</p>
+          <h4 data-en="Automated Warehousing System" data-zh="自动化仓储系统">Automated Warehousing System</h4>
+          <p data-en="AGV-based automated warehousing streamlines finished goods storage and retrieval, supporting reliable export-ready fulfilment." data-zh="基于AGV的自动化仓储系统优化成品的存取流程，支持可靠的出口就绪履约。">AGV-based automated warehousing streamlines finished goods storage and retrieval, supporting reliable export-ready fulfilment.</p>
         </div>
       </div>
     </div>
@@ -440,56 +251,60 @@
 </section>
 
 <section class="cta-section">
-  <h3>Ready to Discuss Your Production Needs?</h3>
-  <a class="cta-btn" href="index.html#contact">Start a Conversation →</a>
+  <h3 data-en="Ready to Discuss Your Production Needs?" data-zh="准备好讨论您的生产需求了吗？">Ready to Discuss Your Production Needs?</h3>
+  <a class="cta-btn" href="index.html#contact" data-en="Start a Conversation →" data-zh="开始对话 →">Start a Conversation →</a>
 </section>
-
 
 <footer class="site-footer">
   <div class="footer-grid">
     <div>
       <div class="footer-logo">BO<b>NIX</b></div>
-      <p class="footer-desc">Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified.</p>
+      <p class="footer-desc" data-en="Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified." data-zh="专业个护 ODM &amp; OEM 代加工制造，GMPC 及 ISO 22716 认证。">Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified.</p>
     </div>
     <div class="footer-col">
-      <h5>Services</h5>
-      <a href="index.html#services">OEM Manufacturing</a>
-      <a href="index.html#services">ODM Development</a>
-      <a href="index.html#services">Semi-Finished Supply</a>
+      <h5 data-en="Services" data-zh="服务">Services</h5>
+      <a href="index.html#services" data-en="OEM Manufacturing" data-zh="OEM 代工">OEM Manufacturing</a>
+      <a href="index.html#services" data-en="ODM Development" data-zh="ODM 研发">ODM Development</a>
+      <a href="index.html#services" data-en="Semi-Finished Supply" data-zh="半成品供应">Semi-Finished Supply</a>
     </div>
     <div class="footer-col">
-      <h5>Company</h5>
-      <a href="facility.html">Our Facility</a>
-      <a href="facility.html">Manufacturing Standards</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="products.html">Product Range</a>
+      <h5 data-en="Company" data-zh="公司">Company</h5>
+      <a href="facility.html" data-en="Our Facility" data-zh="工厂实力">Our Facility</a>
+      <a href="facility.html" data-en="Manufacturing Standards" data-zh="生产标准">Manufacturing Standards</a>
+      <a href="certifications.html" data-en="Certifications" data-zh="资质认证">Certifications</a>
+      <a href="products.html" data-en="Product Range" data-zh="产品范围">Product Range</a>
     </div>
     <div class="footer-col">
-      <h5>Contact</h5>
+      <h5 data-en="Contact" data-zh="联系方式">Contact</h5>
       <a href="index.html#contact">WhatsApp</a>
-      <a href="index.html#contact">Email Us</a>
+      <a href="index.html#contact" data-en="Email Us" data-zh="邮箱联系">Email Us</a>
       <a href="index.html#contact">+86 139 2035 1502</a>
-      <a href="index.html#contact">Guangzhou · Chengdu</a>
+      <a href="index.html#contact" data-en="Guangzhou · Chengdu" data-zh="广州 · 成都">Guangzhou · Chengdu</a>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 BONIX. All rights reserved.</div>
+  <div class="footer-bottom" data-en="© 2026 BONIX. All rights reserved." data-zh="© 2026 BONIX. 保留所有权利.">© 2026 BONIX. All rights reserved.</div>
 </footer>
 
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a></p>
+  <p data-en='We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a>' data-zh='我们使用 Cookie 提升浏览体验并分析网站流量。<a href="privacy-policy.html">隐私政策</a>'>We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a></p>
   <div class="cookie-btns">
-    <button id="cookie-decline">Decline</button>
-    <button id="cookie-accept">Accept</button>
+    <button id="cookie-decline" data-en="Decline" data-zh="拒绝">Decline</button>
+    <button id="cookie-accept" data-en="Accept" data-zh="接受">Accept</button>
   </div>
 </div>
+
 <script>
 function setLang(lang) {
   document.querySelectorAll('.lang-toggle button').forEach(function(b) {
     b.classList.toggle('on', b.textContent.trim() === (lang === 'en' ? 'EN' : '中文'));
   });
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+  });
   localStorage.setItem('bonix-lang', lang);
 }
 (function() { setLang(localStorage.getItem('bonix-lang') || 'en'); })();
+
 (function() {
   var KEY = 'bonix-cookie-consent';
   if (localStorage.getItem(KEY)) return;
