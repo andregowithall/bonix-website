@@ -23,25 +23,20 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'IBM Plex Sans', sans-serif; background: var(--off-white); color: #1c2b26; }
-  .preview-note {
-    background: #fff3cd; color: #6b5a1f; text-align: center;
-    padding: 10px 16px; font-size: 13px; border-bottom: 1px solid #e6d8a8;
-  }
   .nav {
     display: flex; justify-content: space-between; align-items: center;
     padding: 20px 5%; background: #fff; border-bottom: 1px solid #eee2c8;
   }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--brand-green); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--brand-green); text-decoration: none; }
   .logo b { font-weight: 700; }
-  .nav-links { display: flex; gap: 26px; font-size: 14px; color: #555; } .nav-links a { text-decoration:none; color:#555; } .nav-links a:hover{ color:var(--brand-green);}
+  .nav-links { display: flex; gap: 26px; font-size: 14px; } .nav-links a { text-decoration:none; color:#555; } .nav-links a:hover{ color:var(--brand-green);}
   .nav-links a.active { color: var(--brand-green); font-weight: 600; border-bottom: 2px solid var(--brand-green); padding-bottom: 4px; }
   .nav-right { display: flex; align-items: center; gap: 16px; }
   .lang-toggle { display: flex; font-size: 12px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; }
-  .lang-toggle span { padding: 5px 10px; }
-  .lang-toggle .on { background: var(--brand-green); color: #fff; }
-  .quote-btn { background: #12211c; color: #fff; padding: 9px 18px; border-radius: 4px; font-size: 13px; font-weight: 600; }
+  .lang-toggle button { padding: 5px 10px; background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: #555; }
+  .lang-toggle button.on { background: var(--brand-green); color: #fff; }
+  .quote-btn { background: #12211c; color: #fff; padding: 9px 18px; border-radius: 4px; font-size: 13px; font-weight: 600; text-decoration: none; }
   @media (max-width: 1000px) { .nav-links { display: none; } }
-
   .site-footer { background: #12211c; color: rgba(255,255,255,0.85); padding: 60px 5% 30px; margin-top: 40px; }
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; max-width: 1360px; margin: 0 auto; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; margin-bottom: 14px; }
@@ -52,127 +47,120 @@
   .footer-col a:hover { color: #c8a96a; }
   .footer-bottom { max-width: 1360px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4); }
   @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-/* Cookie consent banner */
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:#16201b;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;}
-#cookie-banner.show{transform:translateY(0);}
-#cookie-banner p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.65;flex:1;min-width:220px;margin:0;}
-#cookie-banner p a{color:#c8a96a;text-decoration:underline;}
-.cookie-btns{display:flex;gap:.65rem;flex-shrink:0;}
-#cookie-accept{padding:9px 24px;background:#2f5d4f;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
-#cookie-decline{padding:9px 20px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:13px;cursor:pointer;font-family:inherit;}
-
-/* Lang toggle buttons */
-.lang-toggle button{padding:5px 10px;background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#555;}
-.lang-toggle button.on{background:#2f5d4f;color:#fff;}
-
+  #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:#16201b;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;}
+  #cookie-banner.show{transform:translateY(0);}
+  #cookie-banner p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.65;flex:1;min-width:220px;margin:0;}
+  #cookie-banner p a{color:#c8a96a;text-decoration:underline;}
+  .cookie-btns{display:flex;gap:.65rem;flex-shrink:0;}
+  #cookie-accept{padding:9px 24px;background:#2f5d4f;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
+  #cookie-decline{padding:9px 20px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:13px;cursor:pointer;font-family:inherit;}
 </style>
 </head>
 <body>
 
-
 <nav class="nav">
   <a href="index.html" class="logo">BO<b>NIX</b></a>
   <div class="nav-links">
-    <a href="facility.html">Facility</a>
-    <a href="certifications.html" class="active">Certifications</a>
-    <a href="index.html#services">Services</a>
-    <a href="products.html">Products</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="facility.html" data-en="Facility" data-zh="工厂实力">Facility</a>
+    <a href="certifications.html" class="active" data-en="Certifications" data-zh="资质认证">Certifications</a>
+    <a href="index.html#services" data-en="Services" data-zh="服务模式">Services</a>
+    <a href="products.html" data-en="Products" data-zh="产品品类">Products</a>
+    <a href="index.html#contact" data-en="Contact" data-zh="联系我们">Contact</a>
   </div>
   <div class="nav-right">
-    <div class="lang-toggle"><button onclick="setLang('en')">EN</button><button onclick="setLang('zh')">中文</button></div>
-    <a href="index.html#contact" class="quote-btn">Get a Quote</a>
+    <div class="lang-toggle">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+    <a href="index.html#contact" class="quote-btn" data-en="Get a Quote" data-zh="立即询价">Get a Quote</a>
   </div>
 </nav>
 
 <div class="page-header">
-  <div class="eyebrow">Quality Assurance</div>
-  <h1 class="page-title">Internationally Certified. Independently Verified.</h1>
-  <p class="page-desc">Our manufacturing operates under internationally recognised quality and safety certifications, independently audited and renewed to support brands entering regulated markets worldwide.</p>
+  <div class="eyebrow" data-en="Quality Assurance" data-zh="质量保证">Quality Assurance</div>
+  <h1 class="page-title" data-en="Internationally Certified. Independently Verified." data-zh="国际认证。权威机构认可。">Internationally Certified. Independently Verified.</h1>
+  <p class="page-desc" data-en="Our manufacturing operates under internationally recognised quality and safety certifications, independently audited and renewed to support brands entering regulated markets worldwide." data-zh="我们的制造业务通过国际认可的质量与安全认证——经独立审计与更新，支持品牌进入全球受监管市场。">Our manufacturing operates under internationally recognised quality and safety certifications, independently audited and renewed to support brands entering regulated markets worldwide.</p>
 </div>
 
 <div class="group">
   <div class="cert-grid">
     <div class="cert-card">
       <div class="cert-img"><img src="images/iso-22716-certificate.jpg" alt="ISO 22716 Certificate"></div>
-      <div class="cert-caption"><h4>ISO 22716:2007</h4></div>
+      <div class="cert-caption"><h4 data-en="ISO 22716:2007" data-zh="ISO 22716:2007">ISO 22716:2007</h4></div>
     </div>
     <div class="cert-card">
       <div class="cert-img"><img src="images/gmpc-certificate.jpg" alt="GMPC Certificate"></div>
-      <div class="cert-caption"><h4>GMPC</h4></div>
+      <div class="cert-caption"><h4 data-en="GMPC" data-zh="GMPC">GMPC</h4></div>
     </div>
     <div class="cert-card">
       <div class="cert-img"><img src="images/fda-facility-registration.png" alt="FDA Registration"></div>
-      <div class="cert-caption"><h4>U.S. FDA Facility Registration</h4></div>
+      <div class="cert-caption"><h4 data-en="U.S. FDA Facility Registration" data-zh="美国 FDA 工厂注册">U.S. FDA Facility Registration</h4></div>
     </div>
     <div class="cert-card">
       <div class="cert-img"><img src="images/halal-certification.png" alt="Halal Certification"></div>
-      <div class="cert-caption"><h4>Halal Certification</h4></div>
+      <div class="cert-caption"><h4 data-en="Halal Certification" data-zh="清真认证">Halal Certification</h4></div>
     </div>
     <div class="cert-card">
       <div class="cert-img"><img src="images/smeta-sedex-audit.png" alt="SMETA Sedex Audit"></div>
-      <div class="cert-caption"><h4>SMETA (Sedex Audit)</h4></div>
+      <div class="cert-caption"><h4 data-en="SMETA (Sedex Audit)" data-zh="SMETA（Sedex 审核）">SMETA (Sedex Audit)</h4></div>
     </div>
     <div class="cert-card">
       <div class="cert-img"><img src="images/cnas-lab-accreditation.png" alt="CNAS Laboratory Accreditation"></div>
-      <div class="cert-caption"><h4>CNAS Lab Accreditation</h4></div>
+      <div class="cert-caption"><h4 data-en="CNAS Lab Accreditation" data-zh="CNAS 实验室认可">CNAS Lab Accreditation</h4></div>
     </div>
   </div>
 </div>
-
-<p class="disclosure-note">Sensitive details including company address and contact information have been redacted. Full documentation available upon request.</p>
-
 
 <footer class="site-footer">
   <div class="footer-grid">
     <div>
       <div class="footer-logo">BO<b>NIX</b></div>
-      <p class="footer-desc">Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified.</p>
+      <p class="footer-desc" data-en="Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified." data-zh="专业个护 ODM &amp; OEM 代加工制造，GMPC 及 ISO 22716 认证。">Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified.</p>
     </div>
     <div class="footer-col">
-      <h5>Services</h5>
-      <a href="index.html#services">OEM Manufacturing</a>
-      <a href="index.html#services">ODM Development</a>
-      <a href="index.html#services">Semi-Finished Supply</a>
+      <h5 data-en="Services" data-zh="服务">Services</h5>
+      <a href="index.html#services" data-en="OEM Manufacturing" data-zh="OEM 代工">OEM Manufacturing</a>
+      <a href="index.html#services" data-en="ODM Development" data-zh="ODM 研发">ODM Development</a>
+      <a href="index.html#services" data-en="Semi-Finished Supply" data-zh="半成品供应">Semi-Finished Supply</a>
     </div>
     <div class="footer-col">
-      <h5>Company</h5>
-      <a href="facility.html">Our Facility</a>
-      <a href="facility.html">Manufacturing Standards</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="products.html">Product Range</a>
+      <h5 data-en="Company" data-zh="公司">Company</h5>
+      <a href="facility.html" data-en="Our Facility" data-zh="工厂实力">Our Facility</a>
+      <a href="facility.html" data-en="Manufacturing Standards" data-zh="生产标准">Manufacturing Standards</a>
+      <a href="certifications.html" data-en="Certifications" data-zh="资质认证">Certifications</a>
+      <a href="products.html" data-en="Product Range" data-zh="产品范围">Product Range</a>
     </div>
     <div class="footer-col">
-      <h5>Contact</h5>
+      <h5 data-en="Contact" data-zh="联系方式">Contact</h5>
       <a href="index.html#contact">WhatsApp</a>
-      <a href="index.html#contact">Email Us</a>
+      <a href="index.html#contact" data-en="Email Us" data-zh="邮箱联系">Email Us</a>
       <a href="index.html#contact">+86 139 2035 1502</a>
-      <a href="index.html#contact">Guangzhou · Chengdu</a>
+      <a href="index.html#contact" data-en="Guangzhou · Chengdu" data-zh="广州 · 成都">Guangzhou · Chengdu</a>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 BONIX. All rights reserved.</div>
+  <div class="footer-bottom" data-en="© 2026 BONIX. All rights reserved." data-zh="© 2026 BONIX. 保留所有权利.">© 2026 BONIX. All rights reserved.</div>
 </footer>
 
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a></p>
+  <p data-en='We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a>' data-zh='我们使用 Cookie 提升浏览体验并分析网站流量。<a href="privacy-policy.html">隐私政策</a>'>We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a></p>
   <div class="cookie-btns">
-    <button id="cookie-decline">Decline</button>
-    <button id="cookie-accept">Accept</button>
+    <button id="cookie-decline" data-en="Decline" data-zh="拒绝">Decline</button>
+    <button id="cookie-accept" data-en="Accept" data-zh="接受">Accept</button>
   </div>
 </div>
+
 <script>
-// Lang toggle (visual state only; bilingual content handled by index.html)
 function setLang(lang) {
   document.querySelectorAll('.lang-toggle button').forEach(function(b) {
     b.classList.toggle('on', b.textContent.trim() === (lang === 'en' ? 'EN' : '中文'));
   });
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+  });
   localStorage.setItem('bonix-lang', lang);
 }
-(function() {
-  setLang(localStorage.getItem('bonix-lang') || 'en');
-})();
+(function() { setLang(localStorage.getItem('bonix-lang') || 'en'); })();
 
-// Cookie consent
 (function() {
   var KEY = 'bonix-cookie-consent';
   if (localStorage.getItem(KEY)) return;
