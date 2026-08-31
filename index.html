@@ -41,7 +41,7 @@
 html{scroll-behavior:smooth;overflow-x:hidden;}
 body{background:var(--white);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;letter-spacing:-0.01em;}
 nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;}
-.nav-inner{max-width:1260px;margin:0 auto;padding:0 2.5rem;width:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.nav-inner{max-width:1360px;margin:0 auto;padding:0 2.5rem;width:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
 .logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--navy);text-decoration:none;}
 .logo span{color:var(--accent);}
 .nav-links{display:flex;list-style:none;}
@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;background:rgba(
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
     .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;}@media(max-width:768px){.hero-video{display:none;}.hero{background-image:url(hero-fallback.jpg);background-size:cover;background-position:center;}}
 .hero-mask{position:absolute;inset:0;background:linear-gradient(105deg,rgba(250,249,245,.96) 0%,rgba(250,249,245,.88) 42%,rgba(28,43,37,.34) 100%);}
-.hero-content{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 2.5rem 6rem;width:100%;}
+.hero-content{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 2.5rem 6rem;width:100%;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);border:1px solid rgba(13,110,110,.25);border-radius:4px;padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;}
 .hero-content h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,68px);font-weight:700;color:var(--navy);line-height:1.06;letter-spacing:-1.5px;max-width:680px;margin-bottom:1.5rem;}
 .hero-content h1 em{font-style:normal;color:var(--accent);}
@@ -79,14 +79,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;background:rgba(
 .hero-badges{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);}
 .hbadge{color:var(--text);font-size:13px;font-weight:500;}
 .trust-strip{background:var(--navy);}
-.tsi{max-width:1260px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:stretch;flex-wrap:wrap;}
+.tsi{max-width:1360px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:stretch;flex-wrap:wrap;}
 .ti{flex:1;min-width:160px;display:flex;flex-direction:column;justify-content:center;padding:1.4rem 1.8rem;border-right:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.65);font-size:12px;}
 .ti:last-child{border-right:none;}
 .ti strong{color:#fff;font-size:15px;display:block;margin-bottom:1px;}
 .ti .tnum{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#fff;line-height:1;}
 .ti .tnum span{font-size:18px;color:var(--gold);}
 .sec{padding:7rem 0;}
-.sec-inner{max-width:1260px;margin:0 auto;padding:0 2.5rem;}
+.sec-inner{max-width:1360px;margin:0 auto;padding:0 2.5rem;}
 .sec-alt{background:var(--bg);}
 .sh{margin-bottom:4rem;}
 .sh.center{text-align:center;}
@@ -143,7 +143,7 @@ h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.6vw,46px);font-
 .fsub{width:100%;padding:13px;background:var(--navy);color:#fff;font-weight:600;font-size:14px;border-radius:6px;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:background .2s;}
 .fsub:hover{background:var(--accent);}
 footer{background:var(--navy);color:rgba(255,255,255,.6);}
-.ftop{max-width:1260px;margin:0 auto;padding:3rem 2.5rem 1.5rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;}
+.ftop{max-width:1360px;margin:0 auto;padding:3rem 2.5rem 1.5rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;}
 .fbrand .logo{color:#fff;font-size:19px;}
 .fbrand .logo span{color:var(--gold);}
 .fbrand p{margin-top:.9rem;font-size:13px;line-height:1.8;max-width:250px;}
@@ -151,7 +151,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);}
 .fcol ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
 .fcol ul li a{color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;transition:color .2s;}
 .fcol ul li a:hover{color:#fff;}
-.fbot{border-top:1px solid rgba(255,255,255,.1);max-width:1260px;margin:0 auto;padding:1.4rem 2.5rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:.8rem;}
+.fbot{border-top:1px solid rgba(255,255,255,.1);max-width:1360px;margin:0 auto;padding:1.4rem 2.5rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:.8rem;}
 .fcs{display:flex;gap:7px;}
 .fc{padding:3px 9px;border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.06em;}
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
@@ -662,7 +662,7 @@ body{overflow-x:hidden;}
 
 <section class="sec sec-alt" id="certifications">
   <div class="sec-inner">
-    <div class="fac-layout fade-in" style="margin-bottom:2rem;">
+    <div class="fac-layout fade-in" style="margin-bottom:2rem;grid-template-columns:1fr 1.4fr;gap:3.5rem;">
       <div>
         <div class="sh">
           <div class="eyebrow reveal" id="cert-eye">Quality Assurance</div>
@@ -673,16 +673,6 @@ body{overflow-x:hidden;}
       </div>
       <div>
         <img src="cert-badges.jpeg" alt="certifications" loading="lazy" style="width:100%;border-radius:16px;display:block;">
-      </div>
-    </div>
-    <div class="cert-docs reveal reveal-d2">
-      <div class="cert-doc">
-        <img src="cert-doc-gmpc.jpeg" alt="GMPC certificate" loading="lazy">
-        <div class="cert-doc-cap" id="cdoc1">GMPC — Good Manufacturing Practice of Cosmetics</div>
-      </div>
-      <div class="cert-doc">
-        <img src="cert-doc-iso.jpeg" alt="ISO 22716 certificate" loading="lazy">
-        <div class="cert-doc-cap" id="cdoc2">ISO 22716:2007 — Cosmetics GMP</div>
       </div>
     </div>
   </div>
