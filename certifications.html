@@ -40,6 +40,10 @@
   .lang-toggle button.on { background: var(--brand-green); color: #fff; }
   .quote-btn { background: #12211c; color: #fff; padding: 9px 18px; border-radius: 4px; font-size: 13px; font-weight: 600; text-decoration: none; }
   @media (max-width: 1000px) { .nav-links { display: none; } }
+  /* 7-card grid: 4+3 on desktop/tablet — avoids lonely single card */
+  .cert-grid { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 1000px) { .cert-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 600px)  { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
   .site-footer { background: #12211c; color: rgba(255,255,255,0.85); padding: 60px 5% 30px; margin-top: 40px; }
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; max-width: 1360px; margin: 0 auto; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; margin-bottom: 14px; }
@@ -111,6 +115,10 @@
     <div class="cert-card">
       <div class="cert-img"><img src="images/cnas-lab-accreditation.png" alt="CNAS Laboratory Accreditation"></div>
       <div class="cert-caption"><h4 data-en="CNAS Lab Accreditation" data-zh="CNAS 实验室认可">CNAS Lab Accreditation</h4></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-img"><img src="images/cpsr-certificate.png" alt="CPSR Certificate"></div>
+      <div class="cert-caption"><h4 data-en="CPSR (Cosmetic Product Safety Report)" data-zh="化妆品安全评估报告">CPSR (Cosmetic Product Safety Report)</h4></div>
     </div>
   </div>
 </div>
