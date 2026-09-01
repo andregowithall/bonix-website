@@ -16,8 +16,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-  .preview-note { background: #fff3cd; color: #6b5a1f; text-align: center; padding: 10px 16px; font-size: 13px; border-bottom: 1px solid #e6d8a8; }
-
   .page-header { padding: 60px 5% 40px; text-align: center; max-width: 720px; margin: 0 auto; }
   .page-header .eyebrow { color: var(--gold); }
   .page-title { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 600; color: var(--brand-green); margin-bottom: 14px; }
@@ -86,186 +84,205 @@
   @media (max-width: 560px) {
     .prod-grid { column-count: 1; }
   }
-/* Cookie consent banner */
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:#16201b;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;}
-#cookie-banner.show{transform:translateY(0);}
-#cookie-banner p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.65;flex:1;min-width:220px;margin:0;}
-#cookie-banner p a{color:#c8a96a;text-decoration:underline;}
-.cookie-btns{display:flex;gap:.65rem;flex-shrink:0;}
-#cookie-accept{padding:9px 24px;background:#2f5d4f;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
-#cookie-decline{padding:9px 20px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:13px;cursor:pointer;font-family:inherit;}
 
+  #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:#16201b;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;}
+  #cookie-banner.show{transform:translateY(0);}
+  #cookie-banner p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.65;flex:1;min-width:220px;margin:0;}
+  #cookie-banner p a{color:#c8a96a;text-decoration:underline;}
+  .cookie-btns{display:flex;gap:.65rem;flex-shrink:0;}
+  #cookie-accept{padding:9px 24px;background:#2f5d4f;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
+  #cookie-decline{padding:9px 20px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:13px;cursor:pointer;font-family:inherit;}
+
+  .site-footer { background: #12211c; color: rgba(255,255,255,0.85); padding: 60px 5% 30px; margin-top: 40px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; max-width: 1360px; margin: 0 auto; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; margin-bottom: 14px; }
+  .footer-logo b { color: #c8a96a; }
+  .footer-desc { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.6); max-width: 280px; }
+  .footer-col h5 { font-size: 13px; letter-spacing: 0.5px; margin-bottom: 16px; color: #fff; }
+  .footer-col a { display: block; font-size: 13.5px; color: rgba(255,255,255,0.65); text-decoration: none; margin-bottom: 10px; }
+  .footer-col a:hover { color: #c8a96a; }
+  .footer-bottom { max-width: 1360px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4); }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
 
-
+<style>
+  :root { --accent: #2f5d4f; }
+  .logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+  .logo-mark { width: 28px; height: 28px; flex-shrink: 0; }
+  .logo span { color: var(--accent); }
+</style>
 <nav class="site-nav">
-  <a href="index.html" class="logo">BO<b>NIX</b></a>
+  <a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C16 3 6 11.5 6 19.5C6 25 10.5 29 16 29C21.5 29 26 25 26 19.5C26 11.5 16 3 16 3Z" fill="var(--accent)"/><path d="M16 9.5C16 9.5 11.5 14 11.5 18.8C11.5 22 13.5 24.2 16 24.2" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/></svg><span>BO<b>NIX</b></span></a>
   <div class="nav-links">
-    <a href="facility.html">Facility</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="index.html#services">Services</a>
-    <a href="products.html" class="active">Products</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="facility.html" data-en="Manufacturing Capabilities" data-zh="制造能力">Manufacturing Capabilities</a>
+    <a href="certifications.html" data-en="Certifications" data-zh="资质认证">Certifications</a>
+    <a href="products.html" class="active" data-en="Products" data-zh="产品品类">Products</a>
+    <a href="index.html#services" data-en="Services" data-zh="服务模式">Services</a>
+    <a href="index.html#process" data-en="Process" data-zh="合作流程">Process</a>
+    <a href="index.html#contact" data-en="Contact" data-zh="联系我们">Contact</a>
   </div>
   <div class="nav-right">
-    <div class="lang-toggle"><button onclick="setLang('en')">EN</button><button onclick="setLang('zh')">中文</button></div>
-    <a href="index.html#contact" class="quote-btn">Get a Quote</a>
+    <div class="lang-toggle">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+    <a href="index.html#contact" class="quote-btn" data-en="Get a Quote" data-zh="立即询价">Get a Quote</a>
   </div>
 </nav>
 
 <div class="page-header">
-  <div class="eyebrow">Product Range</div>
-  <h1 class="page-title">Formulations We've Brought to Life</h1>
-  <p class="page-desc">A selection of product lines developed and manufactured across our core categories — from concept formulation to finished packaging.</p>
+  <div class="eyebrow" data-en="Product Range" data-zh="产品品类">Product Range</div>
+  <h1 class="page-title" data-en="Formulations We've Brought to Life" data-zh="我们已实现量产的配方品类">Formulations We've Brought to Life</h1>
+  <p class="page-desc" data-en="A selection of product lines developed and manufactured across our core categories — from concept formulation to finished packaging." data-zh="以下为我们在核心品类中研发并量产的部分产品线——从配方立项到成品出厂。">A selection of product lines developed and manufactured across our core categories — from concept formulation to finished packaging.</p>
 </div>
 
 <div class="prod-grid">
     <div class="prod-card">
-      <div class="prod-img"><img src="images/soothing-repair.jpg" alt="Soothing & Repair"></div>
+      <div class="prod-img"><img src="images/soothing-repair.jpg" alt="Soothing &amp; Repair"></div>
       <div class="prod-caption">
-        <h4>Soothing & Repair</h4>
-        <p>Essence &amp; Cream duo for sensitive, compromised skin</p>
+        <h4 data-en="Soothing &amp; Repair" data-zh="舒缓修护">Soothing &amp; Repair</h4>
+        <p data-en="Essence &amp; Cream duo for sensitive, compromised skin" data-zh="精华+面霜双拼，适用于敏感受损肌">Essence &amp; Cream duo for sensitive, compromised skin</p>
       </div>
     </div>
     <div class="prod-card">
       <div class="prod-img"><img src="images/soothing-repair-2.jpg" alt="Clarifying"></div>
       <div class="prod-caption">
-        <h4>Clarifying</h4>
-        <p>Oil-control essence, toner &amp; cream for acne-prone skin</p>
+        <h4 data-en="Clarifying" data-zh="控油清痘">Clarifying</h4>
+        <p data-en="Oil-control essence, toner &amp; cream for acne-prone skin" data-zh="控油精华、爽肤水与面霜，适合痘痘肌">Oil-control essence, toner &amp; cream for acne-prone skin</p>
       </div>
     </div>
     <div class="prod-card">
       <div class="prod-img"><img src="images/clarifying.jpg" alt="Vitamin C Whitening"></div>
       <div class="prod-caption">
-        <h4>Vitamin C Whitening</h4>
-        <p>Essence, toner &amp; cream for brightening &amp; even tone</p>
+        <h4 data-en="Vitamin C Whitening" data-zh="维C美白">Vitamin C Whitening</h4>
+        <p data-en="Essence, toner &amp; cream for brightening &amp; even tone" data-zh="精华、爽肤水与面霜，均匀肤色亮肤">Essence, toner &amp; cream for brightening &amp; even tone</p>
       </div>
     </div>
     <div class="prod-card">
       <div class="prod-img"><img src="images/vitamin-c-whitening.jpg" alt="Hydrating"></div>
       <div class="prod-caption">
-        <h4>Hydrating</h4>
-        <p>Essence, toner &amp; cream for deep moisture</p>
+        <h4 data-en="Hydrating" data-zh="深层补水">Hydrating</h4>
+        <p data-en="Essence, toner &amp; cream for deep moisture" data-zh="精华、爽肤水与面霜，深层保湿锁水">Essence, toner &amp; cream for deep moisture</p>
       </div>
     </div>
     <div class="prod-card">
       <div class="prod-img"><img src="images/hydrating.jpg" alt="Body Scrub"></div>
       <div class="prod-caption">
-        <h4>Body Scrub</h4>
-        <p>Multi-variant exfoliating body scrub packaging</p>
+        <h4 data-en="Body Scrub" data-zh="身体磨砂">Body Scrub</h4>
+        <p data-en="Multi-variant exfoliating body scrub packaging" data-zh="多款身体磨砂膏包装组合">Multi-variant exfoliating body scrub packaging</p>
       </div>
     </div>
     <div class="prod-card">
       <div class="prod-img"><img src="images/body-scrub.jpg" alt="Balancing Intimate Care"></div>
       <div class="prod-caption">
-        <h4>Balancing Intimate Care</h4>
-        <p>Cleanser, body mist &amp; nourishing oil</p>
+        <h4 data-en="Balancing Intimate Care" data-zh="私密护理">Balancing Intimate Care</h4>
+        <p data-en="Cleanser, body mist &amp; nourishing oil" data-zh="洁净液、身体喷雾与滋养油">Cleanser, body mist &amp; nourishing oil</p>
       </div>
     </div>
     <div class="prod-card">
-      <div class="prod-img"><img src="images/balancing-intimate-care.jpg" alt="Sun Care"></div>
+      <div class="prod-img"><img src="images/sun-care.jpg" alt="Sun Care"></div>
       <div class="prod-caption">
-        <h4>Sun Care</h4>
-        <p>Sunscreen, stick, lip gloss &amp; tinted SPF formats</p>
+        <h4 data-en="Sun Care" data-zh="防晒护理">Sun Care</h4>
+        <p data-en="Sunscreen, stick, lip gloss &amp; tinted SPF formats" data-zh="防晒霜、防晒棒、护唇彩与有色SPF系列">Sunscreen, stick, lip gloss &amp; tinted SPF formats</p>
       </div>
     </div>
     <div class="prod-card">
-      <div class="prod-img"><img src="images/sun-care.jpg" alt="Colloidal Sulfur"></div>
+      <div class="prod-img"><img src="images/colloidal-sulfur.jpg" alt="Colloidal Sulfur"></div>
       <div class="prod-caption">
-        <h4>Colloidal Sulfur</h4>
-        <p>Anti-acne clay mask, cream &amp; spot powder</p>
+        <h4 data-en="Colloidal Sulfur" data-zh="胶体硫磺">Colloidal Sulfur</h4>
+        <p data-en="Anti-acne clay mask, cream &amp; spot powder" data-zh="去痘泥膜、面霜与点状祛痘粉">Anti-acne clay mask, cream &amp; spot powder</p>
       </div>
     </div>
     <div class="prod-card">
-      <div class="prod-img"><img src="images/colloidal-sulfur.jpg" alt="For Teenagers"></div>
+      <div class="prod-img"><img src="images/for-teenagers.jpg" alt="For Teenagers"></div>
       <div class="prod-caption">
-        <h4>For Teenagers</h4>
-        <p>Toner, cleanser, gel &amp; lotion for young skin</p>
+        <h4 data-en="For Teenagers" data-zh="青少年护肤">For Teenagers</h4>
+        <p data-en="Toner, cleanser, gel &amp; lotion for young skin" data-zh="爽肤水、洁面、啫喱与乳液，专为年轻肌设计">Toner, cleanser, gel &amp; lotion for young skin</p>
       </div>
     </div>
     <div class="prod-card">
-      <div class="prod-img"><img src="images/for-teenagers.jpg" alt="Revitalizing Firming"></div>
+      <div class="prod-img"><img src="images/revitalizing-firming.jpg" alt="Revitalizing Firming"></div>
       <div class="prod-caption">
-        <h4>Revitalizing Firming</h4>
-        <p>Cream, eye cream &amp; serum for anti-aging care</p>
+        <h4 data-en="Revitalizing Firming" data-zh="紧致抗衰">Revitalizing Firming</h4>
+        <p data-en="Cream, eye cream &amp; serum for anti-aging care" data-zh="面霜、眼霜与精华，抗衰紧致套组">Cream, eye cream &amp; serum for anti-aging care</p>
       </div>
     </div>
     <div class="prod-card">
-      <div class="prod-img"><img src="images/revitalizing-firming.jpg" alt="Men's Care"></div>
+      <div class="prod-img"><img src="images/men.jpg" alt="Men's Care"></div>
       <div class="prod-caption">
-        <h4>Men's Care</h4>
-        <p>Oil-control cleanser, lotion &amp; cream</p>
+        <h4 data-en="Men's Care" data-zh="男士护理">Men's Care</h4>
+        <p data-en="Oil-control cleanser, lotion &amp; cream" data-zh="控油洁面、乳液与面霜">Oil-control cleanser, lotion &amp; cream</p>
       </div>
     </div>
     <div class="prod-card">
-      <div class="prod-img"><img src="images/men.jpg" alt="Caffeine Revitalizing"></div>
+      <div class="prod-img"><img src="images/caffeine-revitalizing.jpg" alt="Caffeine Revitalizing"></div>
       <div class="prod-caption">
-        <h4>Caffeine Revitalizing</h4>
-        <p>Toner, essence &amp; cream for de-puffing &amp; radiance</p>
+        <h4 data-en="Caffeine Revitalizing" data-zh="咖啡因焕活">Caffeine Revitalizing</h4>
+        <p data-en="Toner, essence &amp; cream for de-puffing &amp; radiance" data-zh="爽肤水、精华与面霜，消肿提亮">Toner, essence &amp; cream for de-puffing &amp; radiance</p>
       </div>
     </div>
 </div>
 
-<div class="pending-note">More product lines and packaging formats available on request.</div>
+<p class="pending-note" data-en="More product lines and packaging formats available on request." data-zh="更多产品线及包装规格，可按需提供。">More product lines and packaging formats available on request.</p>
 
 <section class="cta-section">
-  <h3>Have a Product Idea in Mind?</h3>
-  <a class="cta-btn" href="index.html#contact">Start a Conversation →</a>
+  <h3 data-en="Have a Product Idea in Mind?" data-zh="有了产品想法？">Have a Product Idea in Mind?</h3>
+  <a class="cta-btn" href="index.html#contact" data-en="Start a Conversation →" data-zh="立即开启对话 →">Start a Conversation →</a>
 </section>
 
 <footer class="site-footer">
   <div class="footer-grid">
     <div>
       <div class="footer-logo">BO<b>NIX</b></div>
-      <p class="footer-desc">Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified.</p>
+      <p class="footer-desc" data-en="Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified." data-zh="专业个护 ODM &amp; OEM 代加工制造，GMPC 及 ISO 22716 认证。">Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified.</p>
     </div>
     <div class="footer-col">
-      <h5>Services</h5>
-      <a href="index.html#services">OEM Manufacturing</a>
-      <a href="index.html#services">ODM Development</a>
-      <a href="index.html#services">Semi-Finished Supply</a>
+      <h5 data-en="Services" data-zh="服务">Services</h5>
+      <a href="index.html#services" data-en="OEM Manufacturing" data-zh="OEM 代工">OEM Manufacturing</a>
+      <a href="index.html#services" data-en="ODM Development" data-zh="ODM 研发">ODM Development</a>
+      <a href="index.html#services" data-en="Semi-Finished Supply" data-zh="半成品供应">Semi-Finished Supply</a>
     </div>
     <div class="footer-col">
-      <h5>Company</h5>
-      <a href="facility.html">Our Facility</a>
-      <a href="facility.html">Manufacturing Standards</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="products.html">Product Range</a>
+      <h5 data-en="Company" data-zh="公司">Company</h5>
+      <a href="facility.html" data-en="Our Facility" data-zh="工厂实力">Our Facility</a>
+      <a href="facility.html" data-en="Manufacturing Standards" data-zh="生产标准">Manufacturing Standards</a>
+      <a href="certifications.html" data-en="Certifications" data-zh="资质认证">Certifications</a>
+      <a href="products.html" data-en="Product Range" data-zh="产品范围">Product Range</a>
+      <a href="index.html#process" data-en="Our Process" data-zh="合作流程">Our Process</a>
     </div>
     <div class="footer-col">
-      <h5>Contact</h5>
+      <h5 data-en="Contact" data-zh="联系方式">Contact</h5>
       <a href="index.html#contact">WhatsApp</a>
-      <a href="index.html#contact">Email Us</a>
+      <a href="index.html#contact" data-en="Email Us" data-zh="邮箱联系">Email Us</a>
       <a href="index.html#contact">+86 139 2035 1502</a>
-      <a href="index.html#contact">Guangzhou · Chengdu</a>
+      <a href="index.html#contact" data-en="Guangzhou · Chengdu" data-zh="广州 · 成都">Guangzhou · Chengdu</a>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 BONIX. All rights reserved.</div>
+  <div class="footer-bottom" data-en="© 2026 BONIX. All rights reserved." data-zh="© 2026 BONIX. 保留所有权利.">© 2026 BONIX. All rights reserved.</div>
 </footer>
 
-
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a></p>
+  <p data-en='We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a>' data-zh='我们使用 Cookie 提升浏览体验并分析网站流量。点击"接受"即表示您同意我们使用 Cookie。<a href="privacy-policy.html">隐私政策</a>'>We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a></p>
   <div class="cookie-btns">
-    <button id="cookie-decline">Decline</button>
-    <button id="cookie-accept">Accept</button>
+    <button id="cookie-decline" data-en="Decline" data-zh="拒绝">Decline</button>
+    <button id="cookie-accept" data-en="Accept" data-zh="接受">Accept</button>
   </div>
 </div>
+
 <script>
-// Lang toggle (visual state only; bilingual content handled by index.html)
 function setLang(lang) {
   document.querySelectorAll('.lang-toggle button').forEach(function(b) {
     b.classList.toggle('on', b.textContent.trim() === (lang === 'en' ? 'EN' : '中文'));
   });
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+  });
   localStorage.setItem('bonix-lang', lang);
 }
-(function() {
-  setLang(localStorage.getItem('bonix-lang') || 'en');
-})();
+(function() { setLang(localStorage.getItem('bonix-lang') || 'en'); })();
 
-// Cookie consent
 (function() {
   var KEY = 'bonix-cookie-consent';
   if (localStorage.getItem(KEY)) return;

@@ -20,6 +20,7 @@
     --brand-green: #2f5d4f;
     --off-white: #faf8f4;
     --gold: #c8a96a;
+    --accent: #2f5d4f;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'IBM Plex Sans', sans-serif; background: var(--off-white); color: #1c2b26; }
@@ -27,8 +28,10 @@
     display: flex; justify-content: space-between; align-items: center;
     padding: 20px 5%; background: #fff; border-bottom: 1px solid #eee2c8;
   }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--brand-green); text-decoration: none; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #1c2b26; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
   .logo b { font-weight: 700; }
+  .logo-mark { width: 28px; height: 28px; flex-shrink: 0; }
+  .logo span { color: var(--accent); }
   .nav-links { display: flex; gap: 26px; font-size: 14px; } .nav-links a { text-decoration:none; color:#555; } .nav-links a:hover{ color:var(--brand-green);}
   .nav-links a.active { color: var(--brand-green); font-weight: 600; border-bottom: 2px solid var(--brand-green); padding-bottom: 4px; }
   .nav-right { display: flex; align-items: center; gap: 16px; }
@@ -59,12 +62,13 @@
 <body>
 
 <nav class="nav">
-  <a href="index.html" class="logo">BO<b>NIX</b></a>
+  <a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C16 3 6 11.5 6 19.5C6 25 10.5 29 16 29C21.5 29 26 25 26 19.5C26 11.5 16 3 16 3Z" fill="var(--accent)"/><path d="M16 9.5C16 9.5 11.5 14 11.5 18.8C11.5 22 13.5 24.2 16 24.2" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/></svg><span>BO<b>NIX</b></span></a>
   <div class="nav-links">
-    <a href="facility.html" data-en="Facility" data-zh="工厂实力">Facility</a>
+    <a href="facility.html" data-en="Manufacturing Capabilities" data-zh="制造能力">Manufacturing Capabilities</a>
     <a href="certifications.html" class="active" data-en="Certifications" data-zh="资质认证">Certifications</a>
-    <a href="index.html#services" data-en="Services" data-zh="服务模式">Services</a>
     <a href="products.html" data-en="Products" data-zh="产品品类">Products</a>
+    <a href="index.html#services" data-en="Services" data-zh="服务模式">Services</a>
+    <a href="index.html#process" data-en="Process" data-zh="合作流程">Process</a>
     <a href="index.html#contact" data-en="Contact" data-zh="联系我们">Contact</a>
   </div>
   <div class="nav-right">
@@ -129,6 +133,7 @@
       <a href="facility.html" data-en="Manufacturing Standards" data-zh="生产标准">Manufacturing Standards</a>
       <a href="certifications.html" data-en="Certifications" data-zh="资质认证">Certifications</a>
       <a href="products.html" data-en="Product Range" data-zh="产品范围">Product Range</a>
+      <a href="index.html#process" data-en="Our Process" data-zh="合作流程">Our Process</a>
     </div>
     <div class="footer-col">
       <h5 data-en="Contact" data-zh="联系方式">Contact</h5>
@@ -142,7 +147,7 @@
 </footer>
 
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
-  <p data-en='We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a>' data-zh='我们使用 Cookie 提升浏览体验并分析网站流量。<a href="privacy-policy.html">隐私政策</a>'>We use cookies to enhance your browsing experience and analyze site traffic. <a href="privacy-policy.html">Privacy Policy</a></p>
+  <p data-en='We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a>' data-zh='我们使用 Cookie 提升浏览体验并分析网站流量。点击"接受"即表示您同意我们使用 Cookie。<a href="privacy-policy.html">隐私政策</a>'>We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a></p>
   <div class="cookie-btns">
     <button id="cookie-decline" data-en="Decline" data-zh="拒绝">Decline</button>
     <button id="cookie-accept" data-en="Accept" data-zh="接受">Accept</button>
