@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XERNC4ZQ1J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XERNC4ZQ1J');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BONIX — For Growing Brands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-green: #2f5d4f;
+    --off-white: #faf8f4;
+    --gold: #c8a96a;
+    --accent: #2f5d4f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--off-white); color: #1c2b26; padding-top: 64px; }
+
+  /* Nav */
+  .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    position: fixed; top: 0; left: 0; right: 0; height: 64px; z-index: 300;
+    padding: 0 5%; background: rgba(255,255,255,0.96); border-bottom: 1px solid #eee2c8;
+    backdrop-filter: blur(12px);
+  }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #1c2b26; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; }
+  .logo b { font-weight: 700; }
+  .logo-mark { width: 28px; height: 28px; flex-shrink: 0; }
+  .logo span { color: var(--accent); letter-spacing: -.3px; line-height: 1; }
+  .nav-links { display: flex; gap: 26px; font-size: 14px; }
+  .nav-links a { text-decoration: none; color: #6b746f; }
+  .nav-links a:hover { color: var(--brand-green); }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-toggle { display: flex; font-size: 12px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; }
+  .lang-toggle button { padding: 5px 10px; background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: #555; }
+  .lang-toggle button.on { background: #1c2b25; color: #fff; }
+  .quote-btn { background: #16201b; color: #fff; padding: 9px 22px; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; }
+  @media (max-width: 1000px) { .nav-links { display: none; } }
+
+  /* Page header */
+  .page-header { padding: 40px 5% 20px; text-align: center; max-width: 680px; margin: 0 auto; }
+  .eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; color: var(--brand-green); margin-bottom: 12px; line-height: 1.2; }
+  .page-desc { font-size: 15px; line-height: 1.7; color: #4a5550; }
+
+  /* Three-item list */
+  .program-list { max-width: 680px; margin: 32px auto 0; padding: 0 5%; }
+  .program-item { display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid #e4e0d8; }
+  .program-item:last-child { border-bottom: 1px solid #e4e0d8; }
+  .program-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; font-weight: 600; color: var(--gold); flex-shrink: 0; padding-top: 3px; letter-spacing: .05em; }
+  .program-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--brand-green); margin-bottom: 6px; line-height: 1.3; }
+  .program-body p { font-size: 14px; line-height: 1.65; color: #4a5550; }
+
+  /* Closing card */
+  .closing-wrap { max-width: 740px; margin: 40px auto 60px; padding: 0 5%; }
+  .closing-card { border: 1px solid #d8d3c8; border-top: 3px solid #c8a96a; border-radius: 6px; padding: 48px 56px; text-align: center; background: #fefcf8; }
+  .closing-main { font-size: 18px; line-height: 1.75; color: #3a4a45; margin-bottom: 16px; }
+  .closing-sub { font-size: 14px; line-height: 1.65; color: #6b7570; margin-bottom: 28px; }
+  .btn-start { display: inline-block; background: #16201b; color: #fff; padding: 11px 26px; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: .02em; transition: background .2s; }
+  .btn-start:hover { background: var(--brand-green); }
+
+  /* Footer */
+  .site-footer { background: #12211c; color: rgba(255,255,255,0.85); padding: 60px 5% 30px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; max-width: 1360px; margin: 0 auto; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; margin-bottom: 14px; }
+  .footer-logo b { color: #c8a96a; }
+  .footer-desc { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.6); max-width: 280px; }
+  .footer-col h5 { font-size: 13px; letter-spacing: 0.5px; margin-bottom: 16px; color: #fff; }
+  .footer-col a { display: block; font-size: 13.5px; color: rgba(255,255,255,0.65); text-decoration: none; margin-bottom: 10px; }
+  .footer-col a:hover { color: #c8a96a; }
+  .footer-bottom { max-width: 1360px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4); }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+
+  /* Cookie */
+  #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:#16201b;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;}
+  #cookie-banner.show{transform:translateY(0);}
+  #cookie-banner p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.65;flex:1;min-width:220px;margin:0;}
+  #cookie-banner p a{color:#c8a96a;text-decoration:underline;}
+  .cookie-btns{display:flex;gap:.65rem;flex-shrink:0;}
+  #cookie-accept{padding:9px 24px;background:#2f5d4f;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
+  #cookie-decline{padding:9px 20px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:13px;cursor:pointer;font-family:inherit;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C16 3 6 11.5 6 19.5C6 25 10.5 29 16 29C21.5 29 26 25 26 19.5C26 11.5 16 3 16 3Z" fill="var(--accent)"/><path d="M16 9.5C16 9.5 11.5 14 11.5 18.8C11.5 22 13.5 24.2 16 24.2" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/></svg><span>BO<b>NIX</b></span></a>
+  <div class="nav-links">
+    <a href="facility.html" data-en="Manufacturing Capabilities" data-zh="制造能力">Manufacturing Capabilities</a>
+    <a href="certifications.html" data-en="Certifications" data-zh="资质认证">Certifications</a>
+    <a href="products.html" data-en="Products" data-zh="产品品类">Products</a>
+    <a href="index.html#services" data-en="Services" data-zh="服务模式">Services</a>
+    <a href="index.html#process" data-en="Process" data-zh="合作流程">Process</a>
+    <a href="index.html#contact" data-en="Contact" data-zh="联系我们">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+    <a href="index.html#contact" class="quote-btn" data-en="Get a Quote" data-zh="立即询价">Get a Quote</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="eyebrow" data-en="FOR GROWING BRANDS" data-zh="致成长中的品牌">FOR GROWING BRANDS</div>
+  <h1 class="page-title" data-en="Every Brand Starts Somewhere" data-zh="每个品牌都有起点">Every Brand Starts Somewhere</h1>
+  <p class="page-desc" data-en="Not every partnership starts with a large order — and that's fine. We work with brands at every stage, and we're happy to talk through what makes sense for where you are right now." data-zh="并非每一次合作都始于大额订单——这完全没问题。我们支持处于不同发展阶段的品牌，也很乐意聊聊什么方式最适合你现在所处的阶段。">Not every partnership starts with a large order — and that's fine. We work with brands at every stage, and we're happy to talk through what makes sense for where you are right now.</p>
+</div>
+
+<div class="program-list">
+  <div class="program-item">
+    <div class="program-num">01</div>
+    <div class="program-body">
+      <h3 data-en="Flexible from day one" data-zh="从第一天起就保持灵活">Flexible from day one</h3>
+      <p data-en="Small batch, early-stage, still finding your formula — we're happy to talk through what a first production run could look like for you." data-zh="小批量、早期阶段、配方仍在打磨中——我们乐意和你聊聊第一批生产可能是什么样子。">Small batch, early-stage, still finding your formula — we're happy to talk through what a first production run could look like for you.</p>
+    </div>
+  </div>
+  <div class="program-item">
+    <div class="program-num">02</div>
+    <div class="program-body">
+      <h3 data-en="Guidance along the way" data-zh="全程提供专业指导">Guidance along the way</h3>
+      <p data-en="If you're new to manufacturing, our team can help you think through formulation, packaging, and what a realistic first step looks like." data-zh="如果你刚接触生产制造，我们的团队可以帮你梳理配方、包装，以及切实可行的第一步。">If you're new to manufacturing, our team can help you think through formulation, packaging, and what a realistic first step looks like.</p>
+    </div>
+  </div>
+  <div class="program-item">
+    <div class="program-num">03</div>
+    <div class="program-body">
+      <h3 data-en="Room to grow" data-zh="伴随品牌一起成长">Room to grow</h3>
+      <p data-en="As your brand scales, so does our support — from your first run to full production, without switching partners." data-zh="随着品牌规模扩大，我们的支持也会同步升级——从第一批生产到全面量产，无需更换合作伙伴。">As your brand scales, so does our support — from your first run to full production, without switching partners.</p>
+    </div>
+  </div>
+</div>
+
+<div class="closing-wrap">
+  <div class="closing-card">
+    <p class="closing-main" data-en="Many of the brands we work with today started small. If BONIX's full-scale capabilities down the line feel like where you're headed, we'd love to be part of that journey from here." data-zh="我们现在合作的许多品牌，最初也是从小规模起步的。如果 BONIX 的全面产能未来正是你想要抵达的地方，我们很愿意从现在开始陪你一起走这段路。">Many of the brands we work with today started small. If BONIX's full-scale capabilities down the line feel like where you're headed, we'd love to be part of that journey from here.</p>
+    <p class="closing-sub" data-en="Tell us where you're at — we'll figure out the rest together." data-zh="告诉我们你现在的情况，剩下的我们一起想办法。">Tell us where you're at — we'll figure out the rest together.</p>
+    <a href="index.html#contact" class="btn-start" data-en="Start a Conversation" data-zh="开始对话">Start a Conversation</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">BO<b>NIX</b></div>
+      <p class="footer-desc" data-en="Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified." data-zh="专业个护 ODM &amp; OEM 代加工制造，GMPC 及 ISO 22716 认证。">Professional personal care ODM &amp; OEM manufacturing in China. GMPC &amp; ISO 22716 certified.</p>
+    </div>
+    <div class="footer-col">
+      <h5 data-en="Services" data-zh="服务">Services</h5>
+      <a href="index.html#services" data-en="OEM Manufacturing" data-zh="OEM 代工">OEM Manufacturing</a>
+      <a href="index.html#services" data-en="ODM Development" data-zh="ODM 研发">ODM Development</a>
+      <a href="index.html#services" data-en="Semi-Finished Supply" data-zh="半成品供应">Semi-Finished Supply</a>
+    </div>
+    <div class="footer-col">
+      <h5 data-en="Company" data-zh="公司">Company</h5>
+      <a href="facility.html" data-en="Our Facility" data-zh="工厂实力">Our Facility</a>
+      <a href="facility.html" data-en="Manufacturing Standards" data-zh="生产标准">Manufacturing Standards</a>
+      <a href="certifications.html" data-en="Certifications" data-zh="资质认证">Certifications</a>
+      <a href="products.html" data-en="Product Range" data-zh="产品范围">Product Range</a>
+      <a href="index.html#process" data-en="Our Process" data-zh="合作流程">Our Process</a>
+    </div>
+    <div class="footer-col">
+      <h5 data-en="Contact" data-zh="联系方式">Contact</h5>
+      <a href="index.html#contact">WhatsApp</a>
+      <a href="index.html#contact" data-en="Email Us" data-zh="邮箱联系">Email Us</a>
+      <a href="index.html#contact">+86 139 2035 1502</a>
+      <a href="index.html#contact" data-en="Guangzhou · Chengdu" data-zh="广州 · 成都">Guangzhou · Chengdu</a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-en="© 2026 BONIX. All rights reserved." data-zh="© 2026 BONIX. 保留所有权利.">© 2026 BONIX. All rights reserved.</div>
+</footer>
+
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p data-en='We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a>' data-zh='我们使用 Cookie 提升浏览体验并分析网站流量。点击"接受"即表示您同意我们使用 Cookie。<a href="privacy-policy.html">隐私政策</a>'>We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a></p>
+  <div class="cookie-btns">
+    <button id="cookie-decline" data-en="Decline" data-zh="拒绝">Decline</button>
+    <button id="cookie-accept" data-en="Accept" data-zh="接受">Accept</button>
+  </div>
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-toggle button').forEach(function(b) {
+    b.classList.toggle('on', b.textContent.trim() === (lang === 'en' ? 'EN' : '中文'));
+  });
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+  });
+  localStorage.setItem('bonix-lang', lang);
+}
+(function() { setLang(localStorage.getItem('bonix-lang') || 'en'); })();
+
+(function() {
+  var KEY = 'bonix-cookie-consent';
+  if (localStorage.getItem(KEY)) return;
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+  setTimeout(function() { banner.classList.add('show'); }, 900);
+  function dismiss(v) {
+    localStorage.setItem(KEY, v);
+    banner.classList.remove('show');
+    setTimeout(function() { banner.remove(); }, 420);
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function() { dismiss('accepted'); });
+  document.getElementById('cookie-decline').addEventListener('click', function() { dismiss('declined'); });
+})();
+</script>
+</body>
+</html>

@@ -23,27 +23,27 @@
     --accent: #2f5d4f;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--off-white); color: #1c2b26; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--off-white); color: #1c2b26; padding-top: 64px; }
   .nav {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 5%; background: #fff; border-bottom: 1px solid #eee2c8;
+    position: fixed; top: 0; left: 0; right: 0; height: 64px; z-index: 300;
+    padding: 0 5%; background: rgba(255,255,255,0.96); border-bottom: 1px solid #eee2c8;
+    backdrop-filter: blur(12px);
   }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #1c2b26; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #1c2b26; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; }
   .logo b { font-weight: 700; }
   .logo-mark { width: 28px; height: 28px; flex-shrink: 0; }
-  .logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 26px; font-size: 14px; } .nav-links a { text-decoration:none; color:#555; } .nav-links a:hover{ color:var(--brand-green);}
+  .logo span { color: var(--accent); letter-spacing: -.3px; line-height: 1; }
+  .nav-links { display: flex; gap: 26px; font-size: 14px; } .nav-links a { text-decoration:none; color:#6b746f; } .nav-links a:hover{ color:var(--brand-green);}
   .nav-links a.active { color: var(--brand-green); font-weight: 600; border-bottom: 2px solid var(--brand-green); padding-bottom: 4px; }
   .nav-right { display: flex; align-items: center; gap: 16px; }
   .lang-toggle { display: flex; font-size: 12px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; }
   .lang-toggle button { padding: 5px 10px; background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: #555; }
-  .lang-toggle button.on { background: var(--brand-green); color: #fff; }
-  .quote-btn { background: #12211c; color: #fff; padding: 9px 18px; border-radius: 4px; font-size: 13px; font-weight: 600; text-decoration: none; }
+  .lang-toggle button.on { background: #1c2b25; color: #fff; }
+  .quote-btn { background: #16201b; color: #fff; padding: 9px 22px; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; }
   @media (max-width: 1000px) { .nav-links { display: none; } }
-  /* 7-card grid: 4+3 on desktop/tablet — avoids lonely single card */
-  .cert-grid { grid-template-columns: repeat(4, 1fr); }
-  @media (max-width: 1000px) { .cert-grid { grid-template-columns: repeat(4, 1fr); } }
-  @media (max-width: 600px)  { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+  /* 6-card grid: 1 row on desktop; shared.css handles responsive (3-col ≤1000px, 2-col ≤560px) */
+  .cert-grid { gap: 14px; }
   .site-footer { background: #12211c; color: rgba(255,255,255,0.85); padding: 60px 5% 30px; margin-top: 40px; }
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; max-width: 1360px; margin: 0 auto; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; margin-bottom: 14px; }
@@ -109,16 +109,12 @@
       <div class="cert-caption"><h4 data-en="Halal Certification" data-zh="清真认证">Halal Certification</h4></div>
     </div>
     <div class="cert-card">
-      <div class="cert-img"><img src="images/smeta-sedex-audit.png" alt="SMETA Sedex Audit"></div>
-      <div class="cert-caption"><h4 data-en="SMETA (Sedex Audit)" data-zh="SMETA（Sedex 审核）">SMETA (Sedex Audit)</h4></div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-img"><img src="images/cnas-lab-accreditation.png" alt="CNAS Laboratory Accreditation"></div>
-      <div class="cert-caption"><h4 data-en="CNAS Lab Accreditation" data-zh="CNAS 实验室认可">CNAS Lab Accreditation</h4></div>
-    </div>
-    <div class="cert-card">
       <div class="cert-img"><img src="images/cpsr-certificate.png" alt="CPSR Certificate"></div>
       <div class="cert-caption"><h4 data-en="CPSR (Cosmetic Product Safety Report)" data-zh="化妆品安全评估报告">CPSR (Cosmetic Product Safety Report)</h4></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-img"><img src="images/smeta-sedex-audit.png" alt="SMETA Sedex Audit"></div>
+      <div class="cert-caption"><h4 data-en="SMETA (Sedex Audit)" data-zh="SMETA（Sedex 审核）">SMETA (Sedex Audit)</h4></div>
     </div>
   </div>
 </div>
@@ -134,6 +130,7 @@
       <a href="index.html#services" data-en="OEM Manufacturing" data-zh="OEM 代工">OEM Manufacturing</a>
       <a href="index.html#services" data-en="ODM Development" data-zh="ODM 研发">ODM Development</a>
       <a href="index.html#services" data-en="Semi-Finished Supply" data-zh="半成品供应">Semi-Finished Supply</a>
+      <a href="startup-program.html" data-en="Just Getting Started?" data-zh="刚起步？">Just Getting Started?</a>
     </div>
     <div class="footer-col">
       <h5 data-en="Company" data-zh="公司">Company</h5>

@@ -109,9 +109,18 @@
 
 <style>
   :root { --accent: #2f5d4f; }
-  .logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+  body { padding-top: 64px; }
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; height: 64px; z-index: 300;
+    padding: 0 5%; background: rgba(255,255,255,0.96); border-bottom: 1px solid #eee2c8;
+    backdrop-filter: blur(12px);
+  }
+  .logo { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; font-size: 22px; color: #1c2b26; }
   .logo-mark { width: 28px; height: 28px; flex-shrink: 0; }
-  .logo span { color: var(--accent); }
+  .logo span { color: var(--accent); letter-spacing: -.3px; line-height: 1; }
+  .nav-links a { color: #6b746f; }
+  .quote-btn { background: #16201b; padding: 9px 22px; font-weight: 500; }
+  .lang-toggle button.on { background: #1c2b25; color: #fff; }
 </style>
 <nav class="site-nav">
   <a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C16 3 6 11.5 6 19.5C6 25 10.5 29 16 29C21.5 29 26 25 26 19.5C26 11.5 16 3 16 3Z" fill="var(--accent)"/><path d="M16 9.5C16 9.5 11.5 14 11.5 18.8C11.5 22 13.5 24.2 16 24.2" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/></svg><span>BO<b>NIX</b></span></a>
@@ -243,6 +252,7 @@
       <a href="index.html#services" data-en="OEM Manufacturing" data-zh="OEM 代工">OEM Manufacturing</a>
       <a href="index.html#services" data-en="ODM Development" data-zh="ODM 研发">ODM Development</a>
       <a href="index.html#services" data-en="Semi-Finished Supply" data-zh="半成品供应">Semi-Finished Supply</a>
+      <a href="startup-program.html" data-en="Just Getting Started?" data-zh="刚起步？">Just Getting Started?</a>
     </div>
     <div class="footer-col">
       <h5 data-en="Company" data-zh="公司">Company</h5>
