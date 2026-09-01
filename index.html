@@ -368,7 +368,7 @@ body{overflow-x:hidden;}
 #back-top svg{width:18px;height:18px;stroke:#fff;flex-shrink:0;}
 
 /* ── Mobile 768px — additional fixes ────────────────── */
-@media(max-width:768px){
+@media(max-width:900px){
   #scroll-progress{top:56px;}
   .ti{min-width:0;font-size:14px;}
   .fg label{font-size:14px;}
@@ -985,7 +985,7 @@ body{overflow-x:hidden;}
     <div class="fbrand"><a class="logo" href="#"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C16 3 6 11.5 6 19.5C6 25 10.5 29 16 29C21.5 29 26 25 26 19.5C26 11.5 16 3 16 3Z" fill="var(--accent)"/><path d="M16 9.5C16 9.5 11.5 14 11.5 18.8C11.5 22 13.5 24.2 16 24.2" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/></svg><span class="logo-txt">BO<b>NIX</b></span></a><p id="fp">Professional personal care ODM & OEM manufacturing in China. GMPC & ISO 22716 certified.</p></div>
     <div class="fcol"><h4 id="fc1h">Services</h4><ul><li><a href="#services" id="fc1a">OEM Manufacturing</a></li><li><a href="#services" id="fc1b">ODM Development</a></li><li><a href="#services" id="fc1c">Semi-Finished Supply</a></li><li><a href="startup-program.html" id="fc1d">Just Getting Started?</a></li></ul></div>
     <div class="fcol"><h4 id="fc2h">Company</h4><ul><li><a href="facility.html" id="fc2e">Our Facility</a></li><li><a href="facility.html" id="fc2a">Manufacturing Standards</a></li><li><a href="certifications.html" id="fc2b">Certifications</a></li><li><a href="products.html" id="fc2d">Product Range</a></li><li><a href="#process" id="fc2c">Our Process</a></li></ul></div>
-    <div class="fcol"><h4 id="fc3h">Contact</h4><ul><li><a href="https://wa.me/8613920351502" target="_blank" rel="noopener noreferrer">WhatsApp</a></li><li><a href="mailto:info@bonixmfg.com">Email Us</a></li><li><a href="tel:+8613920351502">+86 139 2035 1502</a></li><li><a href="#" id="fc3l">Guangzhou &middot; Chengdu</a></li></ul></div>
+    <div class="fcol"><h4 id="fc3h">Contact</h4><ul><li><a href="https://wa.me/8613920351502" target="_blank" rel="noopener noreferrer">WhatsApp</a></li><li><a href="mailto:info@bonixmfg.com">Email Us</a></li><li><a href="tel:+8613920351502">+86 139 2035 1502</a></li><li><span id="fc3l">Guangzhou &middot; Chengdu</span></li></ul></div>
   </div>
   <div class="fbot"><p id="fcopy">&copy; 2026 BONIX. All rights reserved.</p><div style="display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;"><a href="privacy-policy.html" class="fpp">Privacy Policy</a><div class="fcs"><span class="fc">GMPC</span><span class="fc">ISO 22716</span><span class="fc">DEKRA</span></div></div></div>
 </footer>
@@ -1114,6 +1114,8 @@ function setLang(l){
   document.querySelectorAll('[data-en]').forEach(el=>{
     el.innerHTML=l==='zh'?el.dataset.zh:el.dataset.en;
   });
+  const plh={'f-name':{en:'Your name',zh:'您的姓名'},'f-company':{en:'Brand / Company',zh:'品牌 / 公司名称'},'f-email':{en:'you@brand.com',zh:'you@brand.com'},'f-phone':{en:'+86 / International',zh:'+86 / 国际号码'},'f-brief':{en:'Product type, target market, quantity, timeline...',zh:'产品类型、目标市场、数量、时间线…'}};
+  Object.entries(plh).forEach(([id,t])=>{const el=document.getElementById(id);if(el)el.placeholder=l==='zh'?t.zh:t.en;});
   renderProducts();
 
 // Number count-up
@@ -1213,21 +1215,22 @@ async function handleFormSubmit(ev) {
   const msg = document.getElementById('form-msg');
   msg.className = ''; msg.textContent = ''; msg.style.display = 'none';
 
+  const isCn = cl === 'zh';
   let ok = true;
 
   // Name (required)
   const name = document.getElementById('f-name');
   if (!name.value.trim()) {
-    showFieldErr(name, 'This field is required'); ok = false;
+    showFieldErr(name, isCn ? '此项为必填' : 'This field is required'); ok = false;
   } else { name.classList.add('f-valid'); }
 
   // Email (required + format)
   const email = document.getElementById('f-email');
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if (!email.value.trim()) {
-    showFieldErr(email, 'This field is required'); ok = false;
+    showFieldErr(email, isCn ? '此项为必填' : 'This field is required'); ok = false;
   } else if (!emailRe.test(email.value.trim())) {
-    showFieldErr(email, 'Please enter a valid email address'); ok = false;
+    showFieldErr(email, isCn ? '请输入有效的邮箱地址' : 'Please enter a valid email address'); ok = false;
   } else { email.classList.add('f-valid'); }
 
   // Phone (optional — validate only if filled)
@@ -1235,14 +1238,14 @@ async function handleFormSubmit(ev) {
   if (phone.value.trim()) {
     const phoneRe = /^[0-9+\-()\s]{7,20}$/;
     if (!phoneRe.test(phone.value.trim())) {
-      showFieldErr(phone, 'Please enter a valid phone number'); ok = false;
+      showFieldErr(phone, isCn ? '请输入有效的电话号码' : 'Please enter a valid phone number'); ok = false;
     } else { phone.classList.add('f-valid'); }
   }
 
   // Brief (required)
   const brief = document.getElementById('f-brief');
   if (!brief.value.trim()) {
-    showFieldErr(brief, 'This field is required'); ok = false;
+    showFieldErr(brief, isCn ? '此项为必填' : 'This field is required'); ok = false;
   } else { brief.classList.add('f-valid'); }
 
   if (!ok) return false;
@@ -1251,7 +1254,7 @@ async function handleFormSubmit(ev) {
   const origText = btn.innerHTML;
   btn.disabled = true;
   btn.classList.remove('fsub-pulse');
-  btn.textContent = 'Sending...';
+  btn.textContent = isCn ? '发送中…' : 'Sending...';
 
   try {
     const res = await fetch(ev.target.action, {
@@ -1260,20 +1263,20 @@ async function handleFormSubmit(ev) {
       headers: { 'Accept': 'application/json' }
     });
     if (res.ok) {
-      msg.textContent = "Thank you! We'll get back to you within 24 hours.";
+      msg.textContent = isCn ? '感谢您的来信！我们将在 24 小时内回复。' : "Thank you! We'll get back to you within 24 hours.";
       msg.className = 'ok';
       ev.target.reset();
       ['f-name','f-email','f-phone','f-brief'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.remove('f-valid','f-invalid');
       });
-      btn.innerHTML = '✓&nbsp;Sent';
+      btn.innerHTML = isCn ? '✓&nbsp;已发送' : '✓&nbsp;Sent';
       btn.style.background = 'var(--green)';
     } else {
       throw new Error('server error');
     }
   } catch (_) {
-    msg.textContent = 'Something went wrong. Please try again.';
+    msg.textContent = isCn ? '发送失败，请重试。' : 'Something went wrong. Please try again.';
     msg.className = 'err';
     btn.disabled = false;
     btn.classList.add('fsub-pulse');
@@ -1364,10 +1367,10 @@ document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a></p>
+  <p data-en='We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a>' data-zh='我们使用 Cookie 提升浏览体验并分析网站流量。点击"接受"即表示您同意我们使用 Cookie。<a href="privacy-policy.html">隐私政策</a>'>We use cookies to enhance your browsing experience and analyze site traffic. By clicking Accept, you consent to our use of cookies. <a href="privacy-policy.html">Privacy Policy</a></p>
   <div class="cookie-btns">
-    <button id="cookie-decline">Decline</button>
-    <button id="cookie-accept">Accept</button>
+    <button id="cookie-decline" data-en="Decline" data-zh="拒绝">Decline</button>
+    <button id="cookie-accept" data-en="Accept" data-zh="接受">Accept</button>
   </div>
 </div>
 </body>

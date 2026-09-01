@@ -43,7 +43,7 @@
   .lang-toggle button { padding: 5px 10px; background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: #555; }
   .lang-toggle button.on { background: #1c2b25; color: #fff; }
   .quote-btn { background: #16201b; color: #fff; padding: 9px 22px; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; }
-  @media (max-width: 1000px) { .nav-links { display: none; } }
+  @media (max-width: 900px) { .nav-links { display: none; } }
 
   /* Page header */
   .page-header { padding: 40px 5% 20px; text-align: center; max-width: 680px; margin: 0 auto; }
@@ -78,6 +78,15 @@
   .footer-col a:hover { color: #c8a96a; }
   .footer-bottom { max-width: 1360px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4); }
   @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) {
+    .page-header { padding: 28px 5% 14px; }
+    .page-title { font-size: 26px; }
+    .program-item { flex-direction: column; gap: 8px; }
+    .program-num { padding-top: 0; }
+    .closing-card { padding: 28px 20px; }
+    .closing-main { font-size: 16px; }
+    .closing-wrap { margin: 28px auto 40px; }
+  }
 
   /* Cookie */
   #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:#16201b;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;}
@@ -106,7 +115,7 @@
       <button onclick="setLang('en')">EN</button>
       <button onclick="setLang('zh')">中文</button>
     </div>
-    <a href="index.html#contact" class="quote-btn" data-en="Get a Quote" data-zh="立即询价">Get a Quote</a>
+    <a href="https://wa.me/8613920351502" target="_blank" rel="noopener noreferrer" class="quote-btn" data-en="Get a Quote" data-zh="立即询价">Get a Quote</a>
   </div>
 </nav>
 
