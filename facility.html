@@ -68,6 +68,23 @@
   .capacity-hint { text-align: center; font-size: 11.5px; color: #b0a98f; margin-top: 14px; letter-spacing: 0.3px; }
   @media (max-width: 800px) { .capacity-grid { grid-template-columns: repeat(2, 1fr); } .capacity-stat { border-bottom: 1px solid #eee2c8; } .capacity-stat:nth-child(2n) { border-right: none; } }
 
+  .team-divider{width:100%;height:1px;background:#eee2c8;margin:2.2rem auto;max-width:1000px;}
+  .team-timeline{display:flex;align-items:flex-start;justify-content:space-between;position:relative;max-width:1000px;margin:0 auto 2.8rem;padding:0 5%;}
+  .team-timeline::before{content:'';position:absolute;top:24px;left:calc(100%/12);right:calc(100%/12);height:1px;background:var(--brand-green);opacity:.5;}
+  .team-node{display:flex;flex-direction:column;align-items:center;gap:.4rem;flex:1;position:relative;z-index:1;}
+  .team-node-step{font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:600;color:var(--brand-green);letter-spacing:.1em;}
+  .team-node-dot{width:14px;height:14px;border-radius:50%;background:var(--off-white);border:2px solid var(--brand-green);}
+  .team-node-label{font-family:'IBM Plex Sans',sans-serif;font-size:10.5px;font-weight:500;color:#6b7570;text-align:center;line-height:1.4;max-width:86px;}
+  .team-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1360px;margin:0 auto;padding:0 5%;}
+  .team-card{background:#fff;border:1px solid #eee2c8;border-radius:14px;padding:1.8rem;transition:all .3s;}
+  .team-card:hover{transform:translateY(-4px);border-color:var(--brand-green);box-shadow:0 16px 44px rgba(47,93,79,.14);}
+  .team-card-icon{color:var(--brand-green);width:28px;height:28px;margin-bottom:.7rem;}
+  .team-card-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--brand-green);margin-bottom:.5rem;}
+  .team-card-desc{font-size:13px;font-weight:400;color:#4a5550;line-height:1.7;margin-bottom:.9rem;}
+  .team-card-stat{font-size:12.5px;font-weight:600;color:var(--gold);letter-spacing:.03em;padding-top:.8rem;border-top:1px solid #eee2c8;}
+  @media(max-width:900px){.team-cards{grid-template-columns:repeat(2,1fr);}.team-timeline{display:none;}}
+  @media(max-width:600px){.team-cards{grid-template-columns:1fr;}}
+
   /* Equipment section */
   .equipment-section { background: var(--dark-bg); padding: 70px 5%; color: #fff; }
   .eq-header { max-width: 720px; margin: 0 auto 40px; text-align: center; }
@@ -139,39 +156,59 @@
 </nav>
 
 <div class="sec-header">
-  <div class="eyebrow" data-en="Facility &amp; Scale" data-zh="工厂与规模">Facility &amp; Scale</div>
-  <h2 data-en="Our Facility &amp; Scale" data-zh="工厂规模与实力">Our Facility &amp; Scale</h2>
+  <div class="eyebrow" data-en="Team &amp; Capability" data-zh="团队与体系能力">Team &amp; Capability</div>
+  <h2 data-en="A Full-Capability Manufacturing Team" data-zh="全能力的制造团队">A Full-Capability Manufacturing Team</h2>
+</div>
+<p style="max-width:640px;margin:-20px auto 30px;text-align:center;font-size:15px;color:#4a5550;line-height:1.7;" data-en="Six dedicated departments work together to take your product from concept to global delivery — under one roof." data-zh="六大专职部门协同合作，在同一屋檐下，将您的产品从概念带到全球交付。">Six dedicated departments work together to take your product from concept to global delivery — under one roof.</p>
+
+<div class="team-divider"></div>
+
+<div class="team-timeline">
+  <div class="team-node"><span class="team-node-step">01</span><div class="team-node-dot"></div><span class="team-node-label" data-en="R&amp;D &amp; Formulation" data-zh="研发与配方">R&amp;D &amp; Formulation</span></div>
+  <div class="team-node"><span class="team-node-step">02</span><div class="team-node-dot"></div><span class="team-node-label" data-en="Raw Material Sourcing" data-zh="原料采购">Raw Material Sourcing</span></div>
+  <div class="team-node"><span class="team-node-step">03</span><div class="team-node-dot"></div><span class="team-node-label" data-en="Packaging &amp; Design" data-zh="包装与设计">Packaging &amp; Design</span></div>
+  <div class="team-node"><span class="team-node-step">04</span><div class="team-node-dot"></div><span class="team-node-label" data-en="Manufacturing &amp; Filling" data-zh="生产与灌装">Manufacturing &amp; Filling</span></div>
+  <div class="team-node"><span class="team-node-step">05</span><div class="team-node-dot"></div><span class="team-node-label" data-en="Quality Control" data-zh="品质管控">Quality Control</span></div>
+  <div class="team-node"><span class="team-node-step">06</span><div class="team-node-dot"></div><span class="team-node-label" data-en="Logistics &amp; Delivery" data-zh="物流与交付">Logistics &amp; Delivery</span></div>
 </div>
 
-<div class="capacity-text-section">
-  <div class="capacity-grid">
-    <div class="capacity-stat">
-      <div class="capacity-num">400+</div>
-      <div class="capacity-label" data-en="Employees" data-zh="在职员工">Employees</div>
-      <div class="capacity-detail" data-en="A team of specialists spanning R&amp;D, quality control, production and logistics." data-zh="横跨研发、质量控制、生产和物流的专家团队。">A team of specialists spanning R&amp;D, quality control, production and logistics.</div>
-    </div>
-    <div class="capacity-stat">
-      <div class="capacity-num">32+</div>
-      <div class="capacity-label" data-en="Equipment Units" data-zh="一流设备">Equipment Units</div>
-      <div class="capacity-detail" data-en="Precision machinery covering emulsifying, filling, water treatment and packaging." data-zh="涵盖乳化、灌装、水处理和包装的精密设备。">Precision machinery covering emulsifying, filling, water treatment and packaging.</div>
-    </div>
-    <div class="capacity-stat">
-      <div class="capacity-num">Class 100K</div>
-      <div class="capacity-label" data-en="Cleanroom" data-zh="净化车间">Cleanroom</div>
-      <div class="capacity-detail" data-en="Controlled particle-count environment for hygienic, consistent formulation." data-zh="可控的粒子数量环境，确保卫生、稳定的配方生产。">Controlled particle-count environment for hygienic, consistent formulation.</div>
-    </div>
-    <div class="capacity-stat">
-      <div class="capacity-num">20</div>
-      <div class="capacity-label" data-en="Production Lines" data-zh="智能化产线">Production Lines</div>
-      <div class="capacity-detail" data-en="17 lotion &amp; cream lines and 3 mask lines, running in parallel." data-zh="17条水乳膏霜线和3条面膜线并行运转。">17 lotion &amp; cream lines and 3 mask lines, running in parallel.</div>
-    </div>
-    <div class="capacity-stat">
-      <div class="capacity-num">500K</div>
-      <div class="capacity-label" data-en="Daily Output*" data-zh="日产能*">Daily Output*</div>
-      <div class="capacity-detail" data-en="Up to 150,000 bottles or 500,000 mask sheets produced per day." data-zh="每日最高生产15万瓶产品或50万片面膜。">Up to 150,000 bottles or 500,000 mask sheets produced per day.</div>
-    </div>
+<div class="team-cards">
+  <div class="team-card">
+    <svg class="team-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5v9L7 24a2 2 0 001.8 3h14.4A2 2 0 0025 24L19 14V5"/><line x1="11" y1="5" x2="21" y2="5"/><circle cx="13" cy="22" r="1.2" fill="currentColor" stroke="none"/><circle cx="18.5" cy="25" r="1" fill="currentColor" stroke="none"/></svg>
+    <div class="team-card-name" data-en="R&amp;D &amp; Formulation" data-zh="研发与配方部">R&amp;D &amp; Formulation</div>
+    <div class="team-card-desc" data-en="In-house formula development from initial concept to stability-proven, market-ready product." data-zh="从初始概念到稳定性验证，全流程自主研发市场级配方。">In-house formula development from initial concept to stability-proven, market-ready product.</div>
+    <div class="team-card-stat" data-en="200+ Active Formulas" data-zh="200+ 活跃配方">200+ Active Formulas</div>
   </div>
-  <div class="capacity-hint" data-en="Hover over a number to see more" data-zh="悬停数字查看详情">Hover over a number to see more</div>
+  <div class="team-card">
+    <svg class="team-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l12 6v8l-12 6L4 17V9z"/><line x1="16" y1="3" x2="16" y2="17"/><line x1="4" y1="9" x2="16" y2="15"/><line x1="28" y1="9" x2="16" y2="15"/><path d="M8 20l-4 2v6l12 6 12-6v-6l-4-2" opacity=".45"/></svg>
+    <div class="team-card-name" data-en="Raw Material Sourcing" data-zh="原料采购部">Raw Material Sourcing</div>
+    <div class="team-card-desc" data-en="Vetted global supplier network ensuring certified, traceable ingredients at competitive cost." data-zh="严格筛选的全球供应商体系，确保原料可溯源、有认证且价格具竞争力。">Vetted global supplier network ensuring certified, traceable ingredients at competitive cost.</div>
+    <div class="team-card-stat" data-en="500+ Verified Suppliers" data-zh="500+ 认证供应商">500+ Verified Suppliers</div>
+  </div>
+  <div class="team-card">
+    <svg class="team-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 9 16 3 28 9"/><path d="M28 9v14l-12 6L4 23V9"/><line x1="16" y1="3" x2="16" y2="17"/><line x1="4" y1="9" x2="16" y2="15"/><line x1="28" y1="9" x2="16" y2="15"/><line x1="10" y1="6" x2="22" y2="12" opacity=".4"/></svg>
+    <div class="team-card-name" data-en="Packaging &amp; Design" data-zh="包装与设计部">Packaging &amp; Design</div>
+    <div class="team-card-desc" data-en="Full structural and creative packaging service — dielines, print-ready artwork and private label." data-zh="一站式包装服务，涵盖结构设计、印前文件制作与私有品牌定制。">Full structural and creative packaging service — dielines, print-ready artwork and private label.</div>
+    <div class="team-card-stat" data-en="100+ Packaging Combinations" data-zh="100+ 种包装组合">100+ Packaging Combinations</div>
+  </div>
+  <div class="team-card">
+    <svg class="team-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="4"/><circle cx="16" cy="16" r="8"/><line x1="16" y1="4" x2="16" y2="8"/><line x1="16" y1="24" x2="16" y2="28"/><line x1="4" y1="16" x2="8" y2="16"/><line x1="24" y1="16" x2="28" y2="16"/><line x1="7.5" y1="7.5" x2="10.3" y2="10.3"/><line x1="21.7" y1="21.7" x2="24.5" y2="24.5"/><line x1="24.5" y1="7.5" x2="21.7" y2="10.3"/><line x1="10.3" y1="21.7" x2="7.5" y2="24.5"/></svg>
+    <div class="team-card-name" data-en="Manufacturing &amp; Filling" data-zh="生产与灌装部">Manufacturing &amp; Filling</div>
+    <div class="team-card-desc" data-en="GMPC-certified automated lines for cream, lotion, gel, serum and liquid product formats." data-zh="GMPC认证自动化产线，支持膏霜、乳液、啫喱、精华及水剂产品的规模化生产。">GMPC-certified automated lines for cream, lotion, gel, serum and liquid product formats.</div>
+    <div class="team-card-stat" data-en="50M Units / Year" data-zh="5,000万件 / 年">50M Units / Year</div>
+  </div>
+  <div class="team-card">
+    <svg class="team-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l11 4v8.5c0 6.5-4.8 10.8-11 13.5C5 26.3 0 22 0 15.5V7z" transform="translate(5,0)"/><polyline points="10 16 13.5 19.5 22 12"/></svg>
+    <div class="team-card-name" data-en="Quality Control" data-zh="品质管控部">Quality Control</div>
+    <div class="team-card-desc" data-en="Multi-stage inspection covering raw materials, in-process batches and every finished product." data-zh="覆盖原料进厂、过程批次及成品出货的多阶段全流程质量检验。">Multi-stage inspection covering raw materials, in-process batches and every finished product.</div>
+    <div class="team-card-stat" data-en="99.8% Pass Rate" data-zh="99.8% 一次合格率">99.8% Pass Rate</div>
+  </div>
+  <div class="team-card">
+    <svg class="team-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="18" height="14" rx="1.5"/><path d="M20 13h4.5l4.5 5v5h-9V13z"/><circle cx="8" cy="25.5" r="2.5"/><circle cx="23.5" cy="25.5" r="2.5"/><line x1="2" y1="15" x2="20" y2="15"/><line x1="8" y1="9" x2="8" y2="5"/><line x1="14" y1="9" x2="14" y2="6"/></svg>
+    <div class="team-card-name" data-en="Logistics &amp; Delivery" data-zh="物流与交付部">Logistics &amp; Delivery</div>
+    <div class="team-card-desc" data-en="Export-ready fulfilment and freight management via sea, air and express across key markets." data-zh="出口合规的仓配一体化物流管理，支持海运、空运及快递，覆盖全球主要市场。">Export-ready fulfilment and freight management via sea, air and express across key markets.</div>
+    <div class="team-card-stat" data-en="40+ Export Countries" data-zh="40+ 出口国家">40+ Export Countries</div>
+  </div>
 </div>
 
 <section class="equipment-section">
