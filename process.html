@@ -156,6 +156,17 @@
   .cookie-btns{display:flex;gap:.65rem;flex-shrink:0;}
   #cookie-accept{padding:9px 24px;background:#2f5d4f;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
   #cookie-decline{padding:9px 20px;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);border-radius:4px;font-size:13px;cursor:pointer;font-family:inherit;}
+  .proc-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:2.2rem auto 1.5rem;max-width:900px;}
+  .proc-tab{border:1px solid #eee2c8;background:#fff;color:#4a5550;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:500;padding:9px 20px;border-radius:999px;cursor:pointer;transition:all .2s;}
+  .proc-tab:hover{border-color:var(--brand-green);}
+  .proc-tab.active{background:var(--brand-green);border-color:var(--brand-green);color:#fff;}
+  .proc-flow-intro{text-align:center;font-size:14px;color:#4a5550;max-width:640px;margin:0 auto 1.6rem;line-height:1.7;}
+  .proc-flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;max-width:1100px;margin:0 auto;padding:0 5%;}
+  @keyframes procChipIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+  .proc-chip{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid #eee2c8;border-radius:999px;padding:8px 16px;font-size:13px;color:var(--brand-green);white-space:nowrap;opacity:0;animation:procChipIn .35s ease forwards;}
+  .proc-chip-idx{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:12px;}
+  .proc-arrow{color:#c9c2a8;font-size:15px;opacity:0;animation:procChipIn .35s ease forwards;}
+  @media(max-width:700px){.proc-flow{gap:6px;}.proc-chip{padding:6px 12px;font-size:12px;}}
 </style>
 </head>
 <body>
@@ -181,67 +192,16 @@
 <div class="sec-header">
   <div class="eyebrow" data-en="Our Model" data-zh="我们的模式">Our Model</div>
   <h2 data-en="From First Conversation to Delivery" data-zh="从首次沟通到最终交付">From First Conversation to Delivery</h2>
-  <p style="max-width:640px;margin:0 auto;text-align:center;font-size:15px;color:#4a5550;line-height:1.7;" data-en="A structured, eight-step path to production — built to support brands managing anything from a single launch to an ongoing multi-line pipeline." data-zh="一条结构化的八步生产路径——专为管理从单次上市到持续多产品线的品牌而设计。">A structured, eight-step path to production — built to support brands managing anything from a single launch to an ongoing multi-line pipeline.</p>
+  <p style="max-width:640px;margin:0 auto;text-align:center;font-size:15px;color:#4a5550;line-height:1.7;" data-en="Each production model follows its own path. Select one below to see the full workflow, step by step." data-zh="每种生产模式都有各自的流程路径，点击下方选择查看完整分步说明。">Each production model follows its own path. Select one below to see the full workflow, step by step.</p>
 </div>
 
-<div class="proc-grid">
-  <div class="proc-card">
-    <svg class="proc-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-    <div class="proc-card-idx">01</div>
-    <h3 data-en="Discuss Intent" data-zh="沟通意向">Discuss Intent</h3>
-    <div class="proc-card-sub" data-en="Share your needs &amp; goals" data-zh="分享您的需求与目标">Share your needs &amp; goals</div>
-    <div class="proc-card-detail" data-en="We start with a working session to understand your product vision, timeline and volume expectations." data-zh="我们从一次深入沟通开始，了解您的产品愿景、时间安排和产量预期。">We start with a working session to understand your product vision, timeline and volume expectations.</div>
-  </div>
-  <div class="proc-card">
-    <svg class="proc-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
-    <div class="proc-card-idx">02</div>
-    <h3 data-en="Sign Contract" data-zh="签订合同">Sign Contract</h3>
-    <div class="proc-card-sub" data-en="Terms &amp; agreement confirmed" data-zh="确认条款与协议">Terms &amp; agreement confirmed</div>
-    <div class="proc-card-detail" data-en="Scope, pricing and IP terms are formalized before any development work begins." data-zh="在任何开发工作开始之前，明确范围、价格及知识产权条款。">Scope, pricing and IP terms are formalized before any development work begins.</div>
-  </div>
-  <div class="proc-card">
-    <svg class="proc-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-    <div class="proc-card-idx">03</div>
-    <h3 data-en="Confirm Product" data-zh="确定产品">Confirm Product</h3>
-    <div class="proc-card-sub" data-en="Formula &amp; sample approval" data-zh="配方与样品确认">Formula &amp; sample approval</div>
-    <div class="proc-card-detail" data-en="Ideal for brands managing multi-SKU production pipelines — formulas and reference samples are reviewed and signed off." data-zh="尤其适合管理多SKU产品线的品牌——对配方和参考样品进行审核确认。">Ideal for brands managing multi-SKU production pipelines — formulas and reference samples are reviewed and signed off.</div>
-  </div>
-  <div class="proc-card">
-    <svg class="proc-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-    <div class="proc-card-idx">04</div>
-    <h3 data-en="Confirm Packaging" data-zh="确定包装">Confirm Packaging</h3>
-    <div class="proc-card-sub" data-en="Design &amp; materials selected" data-zh="设计与包材选定">Design &amp; materials selected</div>
-    <div class="proc-card-detail" data-en="Structural and artwork files are finalized and proofed for print." data-zh="结构与设计文件最终确定并完成印刷打样。">Structural and artwork files are finalized and proofed for print.</div>
-  </div>
-  <div class="proc-card">
-    <svg class="proc-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
-    <div class="proc-card-idx">05</div>
-    <h3 data-en="Apply for Filing" data-zh="申请备案">Apply for Filing</h3>
-    <div class="proc-card-sub" data-en="Regulatory registration" data-zh="法规备案注册">Regulatory registration</div>
-    <div class="proc-card-detail" data-en="We handle documentation for the markets you're launching into." data-zh="我们负责处理您目标市场所需的备案文件。">We handle documentation for the markets you're launching into.</div>
-  </div>
-  <div class="proc-card">
-    <svg class="proc-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-    <div class="proc-card-idx">06</div>
-    <h3 data-en="Purchase Materials" data-zh="购买材料">Purchase Materials</h3>
-    <div class="proc-card-sub" data-en="Sourcing &amp; procurement" data-zh="原料采购">Sourcing &amp; procurement</div>
-    <div class="proc-card-detail" data-en="Raw materials and packaging components are ordered against your confirmed spec." data-zh="根据确认的规格订购原料与包材。">Raw materials and packaging components are ordered against your confirmed spec.</div>
-  </div>
-  <div class="proc-card">
-    <svg class="proc-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg>
-    <div class="proc-card-idx">07</div>
-    <h3 data-en="Begin Production" data-zh="开始生产">Begin Production</h3>
-    <div class="proc-card-sub" data-en="GMPC-standard manufacturing" data-zh="GMPC标准生产">GMPC-standard manufacturing</div>
-    <div class="proc-card-detail" data-en="Full-batch production proceeds under continuous in-line quality control." data-zh="全批次生产在持续的在线质量控制下进行。">Full-batch production proceeds under continuous in-line quality control.</div>
-  </div>
-  <div class="proc-card">
-    <svg class="proc-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-    <div class="proc-card-idx">08</div>
-    <h3 data-en="Complete Delivery" data-zh="完成交付">Complete Delivery</h3>
-    <div class="proc-card-sub" data-en="Export &amp; door delivery" data-zh="出口与送货上门">Export &amp; door delivery</div>
-    <div class="proc-card-detail" data-en="Freight is arranged and tracked through to your destination." data-zh="安排货运并全程跟踪直至送达目的地。">Freight is arranged and tracked through to your destination.</div>
-  </div>
+<div class="proc-tabs">
+  <button class="proc-tab active" data-key="oem">OEM</button>
+  <button class="proc-tab" data-key="odm">ODM</button>
+  <button class="proc-tab" data-key="semi" data-en="Semi-Finished Supply" data-zh="半成品加工">Semi-Finished Supply</button>
 </div>
+<div class="proc-flow-intro" id="proc-flow-intro"></div>
+<div class="proc-flow" id="proc-flow"></div>
 
 <section class="cta-section">
   <h3 data-en="Ready to Discuss Your Production Needs?" data-zh="准备好讨论您的生产需求了吗？">Ready to Discuss Your Production Needs?</h3>
@@ -289,6 +249,50 @@
 </div>
 
 <script>
+const FLOWS = {
+en:{
+oem:{intro:'You bring the formula or a reference sample; we handle production end-to-end.',steps:['Client requests product','Consultation','Design & sample confirmation','Product concept & market strategy','Sign contract','Production','Delivery']},
+odm:{intro:'Full-service development from concept to finished branded product.',steps:['Client brief / sample','Preliminary talk (PT)','Development discussion','Product development & design','Confidentiality agreement','Sample testing','Confirmation','Quotation','Sign contract','Accept order (material & packaging QC)','Production','QC pass','Packaging','Final QC','Delivery']},
+semi:{intro:'We supply proven bulk formulations for you to fill or further process.',steps:['Consultation','Sampling','Confirmation','Sign contract','Production','QC pass','Packaging','Final QC','Delivery']}
+},
+zh:{
+oem:{intro:'您提供配方或参考样品,我们全程负责生产。',steps:['客户申请开发产品','面谈','设计开发及样品确定','产品概念及销售战略确定','签合同','生产','交货']},
+odm:{intro:'从概念到成品的全流程开发服务。',steps:['客户来样要求','开发前洽谈(PT)','开发项目协商','产品开发设计','保密协议','样品测试','确定','报价','签合同','接受订单(原料/包材QC入库)','生产','QC合格','包装','最终QC','交货']},
+semi:{intro:'我们提供成熟料体,供您灌装或后续加工。',steps:['面谈','打样','确定','签合同','生产','QC合格','包装','最终QC','交货']}
+}};
+let procActiveKey = 'oem';
+function renderActiveFlow(){
+  const lang = localStorage.getItem('bonix-lang') || 'en';
+  const f = FLOWS[lang][procActiveKey];
+  const introEl = document.getElementById('proc-flow-intro');
+  if(introEl) introEl.textContent = f.intro;
+  const container = document.getElementById('proc-flow');
+  if(!container) return;
+  container.innerHTML = '';
+  const BASE = 0.03, STEP = 0.045;
+  f.steps.forEach(function(s, i){
+    const chip = document.createElement('div');
+    chip.className = 'proc-chip';
+    chip.innerHTML = '<span class="proc-chip-idx">'+String(i+1).padStart(2,'0')+'</span><span>'+s+'</span>';
+    chip.style.animationDelay = (BASE + i*STEP*2) + 's';
+    container.appendChild(chip);
+    if(i < f.steps.length - 1){
+      const arrow = document.createElement('span');
+      arrow.className = 'proc-arrow';
+      arrow.textContent = '→';
+      arrow.style.animationDelay = (BASE + i*STEP*2 + STEP) + 's';
+      container.appendChild(arrow);
+    }
+  });
+}
+document.querySelectorAll('.proc-tab').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.proc-tab').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    procActiveKey = btn.getAttribute('data-key');
+    renderActiveFlow();
+  });
+});
 function setLang(lang) {
   document.querySelectorAll('.lang-toggle button').forEach(function(b) {
     b.classList.toggle('on', b.textContent.trim() === (lang === 'en' ? 'EN' : '中文'));
@@ -297,6 +301,7 @@ function setLang(lang) {
     el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
   });
   localStorage.setItem('bonix-lang', lang);
+  if (typeof renderActiveFlow === 'function') renderActiveFlow();
 }
 (function() { setLang(localStorage.getItem('bonix-lang') || 'en'); })();
 
