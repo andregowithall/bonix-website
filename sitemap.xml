@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bonixmfg.com/</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bonixmfg.com/facility.html</loc>
+  </url>
+  <url>
+    <loc>https://bonixmfg.com/certifications.html</loc>
+  </url>
+  <url>
+    <loc>https://bonixmfg.com/products.html</loc>
+  </url>
+  <url>
+    <loc>https://bonixmfg.com/process.html</loc>
+  </url>
+  <url>
+    <loc>https://bonixmfg.com/startup-program.html</loc>
+  </url>
+  <url>
+    <loc>https://bonixmfg.com/privacy-policy.html</loc>
   </url>
 </urlset>
