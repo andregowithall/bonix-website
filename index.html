@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XERNC4ZQ1J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XERNC4ZQ1J');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="BONIX — China-based OEM/ODM personal care manufacturer. From formula to finished product, GMPC and ISO 22716 certified.">
@@ -765,12 +757,12 @@ body{overflow-x:hidden;}
         <div class="form-sub" id="fs">We'll reply within 24 hours.</div>
         <form id="inquiry-form" action="https://formspree.io/f/xojzvpzy" method="POST" onsubmit="return handleFormSubmit(event)">
         <div class="frow">
-          <div class="fg"><label id="fl1">Name<span class="req">*</span></label><input id="f-name" type="text" name="name" placeholder="Your name" required><div class="ferr"></div></div>
-          <div class="fg"><label id="fl2">Company</label><input id="f-company" type="text" name="company" placeholder="Brand / Company"><div class="ferr"></div></div>
+          <div class="fg"><label id="fl1" for="f-name">Name<span class="req">*</span></label><input id="f-name" type="text" name="name" placeholder="Your name" required><div class="ferr"></div></div>
+          <div class="fg"><label id="fl2" for="f-company">Company</label><input id="f-company" type="text" name="company" placeholder="Brand / Company"><div class="ferr"></div></div>
         </div>
-        <div class="fg"><label id="fl3">Email<span class="req">*</span></label><input id="f-email" type="email" name="email" placeholder="you@brand.com" required><div class="ferr"></div></div>
-        <div class="fg"><label id="fl-phone">Phone</label><input id="f-phone" type="tel" name="phone" placeholder="+86 / International"><div class="ferr"></div></div>
-        <div class="fg"><label id="fl4">Service Model</label>
+        <div class="fg"><label id="fl3" for="f-email">Email<span class="req">*</span></label><input id="f-email" type="email" name="email" placeholder="you@brand.com" required><div class="ferr"></div></div>
+        <div class="fg"><label id="fl-phone" for="f-phone">Phone</label><input id="f-phone" type="tel" name="phone" placeholder="+86 / International"><div class="ferr"></div></div>
+        <div class="fg"><label id="fl4" for="f-service">Service Model</label>
           <select id="f-service" name="service">
             <option id="fo1">OEM — Contract Manufacturing</option>
             <option id="fo2">ODM — Design & Development</option>
@@ -778,7 +770,7 @@ body{overflow-x:hidden;}
             <option id="fo4">Not sure yet</option>
           </select>
         </div>
-        <div class="fg"><label id="fl5">Your Brief<span class="req">*</span></label><textarea id="f-brief" name="brief" rows="4" placeholder="Product type, target market, quantity, timeline..." required></textarea><div class="ferr"></div></div>
+        <div class="fg"><label id="fl5" for="f-brief">Your Brief<span class="req">*</span></label><textarea id="f-brief" name="brief" rows="4" placeholder="Product type, target market, quantity, timeline..." required></textarea><div class="ferr"></div></div>
         <div id="form-msg"></div>
         <button type="submit" class="fsub fsub-pulse" id="fsb">Send Inquiry &rarr;</button>
         </form>
@@ -1134,22 +1126,6 @@ document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
   if(btn)btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 })();
 
-// ── Cookie consent ────────────────────────────────────
-(function(){
-  const KEY='bonix-cookie-consent';
-  if(localStorage.getItem(KEY))return;
-  const banner=document.getElementById('cookie-banner');
-  if(!banner)return;
-  setTimeout(()=>banner.classList.add('show'),900);
-  function dismiss(v){
-    localStorage.setItem(KEY,v);
-    banner.classList.remove('show');
-    setTimeout(()=>banner.remove(),420);
-  }
-  document.getElementById('cookie-accept').addEventListener('click',()=>dismiss('accepted'));
-  document.getElementById('cookie-decline').addEventListener('click',()=>dismiss('declined'));
-})();
-
 // ── Mobile nav toggle ─────────────────────────────────
 (function(){
   const toggle=document.getElementById('nav-toggle');
@@ -1182,5 +1158,6 @@ document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
     <button id="cookie-accept" data-en="Accept" data-zh="接受">Accept</button>
   </div>
 </div>
+<script src="cookie-consent.js"></script>
 </body>
 </html>
